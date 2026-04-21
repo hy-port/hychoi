@@ -1,0 +1,147 @@
+/* pc */
+@media all and (max-width: 1440px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 3.333vw;
+      --mainSubTitleEn: 1.875vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 1.3vw;
+      --mainTextKo: 1.2vw;
+      --mainSubText: 1.15vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .gallery .inner .changeText {height: 100px;}
+   .gallery .inner .fixedText {height: 64px;}
+   .gallery .inner .box-wrapper2 .box {width: 25%;}
+
+   .project01 .inner {padding: 100px 150px;}
+   .project01 .inner .left {display: flex; flex-direction: column; justify-content: center;}
+   .project01 .inner .left .img {height: fit-content;}
+   .project01 .inner .right {padding-left: 50px;}
+
+   .project02 .inner {padding: 100px 150px;}
+   .project02 .inner .right {display: flex; flex-direction: column; justify-content: center;}
+   .project02 .inner .right .img {height: fit-content;}
+   .project02 .inner .left {padding-right: 50px;}
+
+   .contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 12%;}
+}
+
+/* laptop */
+@media all and (max-width: 1280px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 3.333vw;
+      --mainSubTitleEn: 1.875vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 1.5vw;
+      --mainTextKo: 1.4vw;
+      --mainSubText: 1.35vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .gallery .inner .changeText {height: 100px;}
+   .gallery .inner .fixedText {height: 64px;}
+   .gallery .inner .box-wrapper2 .box {width: 28%;}
+
+   .project01 .inner {padding: 100px 50px;}
+   .project01 .inner .left {display: flex; flex-direction: column; justify-content: center;}
+   .project01 .inner .left .img {height: fit-content;}
+   .project01 .inner .right {padding-left: 50px;}
+
+   .project02 .inner {padding: 100px 50px;}
+   .project02 .inner .right {display: flex; flex-direction: column; justify-content: center;}
+   .project02 .inner .right .img {height: fit-content;}
+   .project02 .inner .left {padding-right: 50px;}
+
+   .contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 15%;}
+   .contact .inner .bottomNav .rights {width: 25%;}
+}
+
+/* tablet */
+@media all and (max-width: 768px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 4vw;
+      --mainSubTitleEn: 5vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 2.5vw;
+      --mainTextKo: 2.5vw;
+      --mainSubText: 2.4vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .title .inner {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+
+   .about .inner .marquee .marquee-content {font-size: var(--headTitle);}
+
+   .gallery .inner .changeText {height: 54px;}
+   .gallery .inner .fixedText {height: 35px; top: 25%;}
+   .gallery .inner .box-wrapper2 .box {width: 45%;}
+
+   .project01 .inner {padding: 100px 50px; display: flex; flex-direction: column; align-items: center;}
+   .project01 .inner .left {width: 70%; display: flex; flex-direction: column; justify-content: center;}
+   .project01 .inner .left .img {height: fit-content;}
+   .project01 .inner .right {display: none;}
+
+   .project02 .inner {padding: 100px 50px; display: flex; flex-direction: column; align-items: center;}
+   .project02 .inner .right {width: 70%; display: flex; flex-direction: column; justify-content: center;}
+   .project02 .inner .right .img {height: fit-content;}
+   .project02 .inner .left {display: none;}
+
+   .contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 25%;}
+   .contact .inner .bottomNav .rights {display: none;}
+}
+
+/* mobile */
+@media all and (max-width: 480px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 4vw;
+      --mainSubTitleEn: 5vw;
+      --mainSubTitleKo: 2.5vw;
+      --mainTextEn: 4vw;
+      --mainTextKo: 4vw;
+      --mainSubText: 3.5vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   header {padding: 0 40px;}
+
+   .title {height: 100vh; padding: 0;}
+   .title .inner .mainTextEn {display: none;}
+
+   .about .inner .marquee .marquee-content {font-size: var(--headTitle);}
+
+   .gallery .inner .changeText {height: 34px;}
+   .gallery .inner .fixedText {height: 22px; top: 22%;}
+   .gallery .inner .box-wrapper2 .box {width: 80%;}
+
+   .project01 .inner {padding: 100px 50px; display: flex; flex-direction: column; align-items: center;}
+   .project01 .inner .left {width: 70%; display: flex; flex-direction: column; justify-content: center;}
+   .project01 .inner .left .img {height: fit-content;}
+   .project01 .inner .right {display: none;}
+
+   .project02 .inner {padding: 100px 50px; display: flex; flex-direction: column; align-items: center;}
+   .project02 .inner .right {width: 70%; display: flex; flex-direction: column; justify-content: center;}
+   .project02 .inner .right .img {height: fit-content;}
+   .project02 .inner .left {display: none;}
+
+   .ncs .inner ul li {font-size: var(--mainSubTitleKo);}
+
+   .contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 40%;}
+   .contact .inner .bottomNav .rights {display: none;}
+}

@@ -1,0 +1,172 @@
+/* header */
+header {width: 100vw; height: 14vh; position: fixed; top: 0; left: 0; background: transparent; display: flex; justify-content: space-between; align-items: center; padding: 0 80px; box-sizing: border-box; overflow: hidden; z-index: 10;}
+
+/* header logo */
+header .logo {width: 100px; height: 40px; transition: transform 0.4s;}
+header .logo a {display: block; width: 100%; display: flex; align-self: center; position: relative;}
+header .logo a img {width: 100%; position: absolute;}
+header .logo a .blackLogo {opacity: 0;}
+header .logo a .whiteLogo {opacity: 1;}
+
+/* header menuOpen */
+header .menuOpen {width: 100px; color: var(--white); cursor: pointer; transition: transform 0.4s;}
+header .menuOpen .menu {display: flex; align-items: center; justify-content: space-between;}
+header .menuOpen .menu li {font-family: var(--en2); font-size: var(--mainSubText);}
+header .menuOpen .menu li.menuBtn {position: relative;}
+header .menuOpen .menu li.menuBtn .blackMenu {opacity: 0;}
+header .menuOpen .menu li.menuBtn img {height: 15px; position: absolute; right: 0; top: 50%; transform: translateY(-50%); transition: transform 0.4s;}
+header .menuOpen .menu li.words {margin-top: 12px;}
+header .menuOpen .menu li .char {display: inline-block; position: relative; color: transparent; overflow: hidden;}
+header .menuOpen.blackColor .menu li .char:before, header .menuOpen.blackColor .menu li .char:after {color: var(--black);}
+header .menuOpen .menu li .char:before, header .menuOpen .menu li .char:after {content: attr(data-char); position: absolute; top: 0; left: 0; color: var(--white); transition: transform 0.4s; transition-delay: calc(30ms * var(--char-index));}
+header .menuOpen .menu li .char:before {transform: translateY(100%);}
+
+/* header toggle */
+header.active .logo, header.active .menuOpen {transform: translateY(-14vh);}
+header .menuOpen.blackColor .menu li.menuBtn .blackMenu {opacity: 1;}
+
+/* header animation */
+header .menuOpen:hover .menu li .char:before {transform: translateY(0%);}
+header .menuOpen:hover .menu li .char:after {transform: translateY(-100%);}
+header .menuOpen:hover .menu li.menuBtn img {transform: rotate(90deg) translateX(-5px); transform-origin: center center;}
+
+
+
+/* .gnb */
+.gnb {position: fixed; z-index: 20; top: 0; left: 100%; width: 100%; height: 100vh; background: var(--black); display: flex; justify-content: center; align-items: center; transition: 1s;}
+
+/* gnb close */
+.gnb .close {height: 30px; position: absolute; top: 6%; right: 5%; transition: all 0.4s; cursor: pointer; opacity: 0.5;}
+
+/* gnb content */
+.gnb ul {margin-top: 100px; box-sizing: border-box;}
+.gnb ul li a {display: block; color: var(--white); font-family: var(--en1); font-weight: 200; font-size: var(--headTitle); text-transform: uppercase; text-align: center; transition: opacity 0.3s;}
+.gnb ul li a .char {display: inline-block; position: relative; color: transparent; overflow: hidden; line-height: 1;}
+.gnb ul li a .char:before {font-weight: 100;}
+.gnb ul li a .char:before, .gnb ul li a .char:after {content: attr(data-char); position: absolute; top: 0; left: 0; color: var(--white); transition: transform 0.4s; transition-delay: calc(30ms * var(--char-index));}
+#gnb-background {width: 100%; height: 100%; background-image: linear-gradient(to bottom right, rgba(255,255,255,0.1) 3%, transparent 3%), linear-gradient(to top left, rgba(255,255,255,0.1) 3%, transparent 3%),linear-gradient(to top right, rgba(255,255,255,0.1) 3%, transparent 3%), linear-gradient(to bottom left, rgba(255,255,255,0.1) 3%, transparent 3%); background-position: 0% 0%; background-size: 4vw 4vw; position: absolute; top: 0; left: 0; z-index: -1; transition: opacity 0.8s ease, background-size 0.8s ease, background-position 0.8s ease; pointer-events: none;}
+
+/* gnb toggle */
+.gnb.on {width: 100%; height: 100vh; left: 0; transition: 1s;}
+.gnb ul.active li a {opacity: 0.2;}
+.gnb ul.active li:hover a {opacity: 1;}
+
+/* .gnb animation */
+.gnb .close:hover {transform: scale(1.2); opacity: 1;}
+.gnb ul li a .char:before {transform: translateY(100%);}
+.gnb ul li a:hover .char:before {transform: translateY(0%);}
+.gnb ul li a:hover .char:after {transform: translateY(-100%);}
+
+
+
+/* title */
+.title {width: 100%; height: 100vh;}
+.title .inner {width: 100%; height: 100%; background: var(--white);}
+.title .inner:after {content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: var(--black); transition: 1s;}
+.title .inner.on:after {height: 0%;}
+
+/* title content */
+.title .inner img {width: 100%; height: 100%; object-fit: cover; clip-path: inset(3% 3%); position: relative;}
+
+
+
+/* info */
+.info {width: 100%; height: 100vh;}
+.info .inner {width: 65%; height: 100%; background: #fff; display: flex; margin: 0 auto;}
+
+/* info left */
+.info .inner .left {width: 60%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: baseline;}
+.info .inner .left .innerTitle {width: 100%; display: inline-block; font-family: var(--en1); font-weight: 200; font-size: 7rem; text-transform: uppercase; margin-bottom: 50px;}
+.info .inner .left .innerTitle span {display: inline-block; -webkit-text-fill-color: rgba(12,12,12,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#0c0c0c, #0c0c0c); text-align: left;}
+.info .inner .left .text {display: inline-block; width: 100%; font-family: var(--ko); font-size: var(--mainTextKo); font-weight: 100; line-height: 1.8; color: var(--gray);}
+.info .inner .left .text span {display: inline-block; -webkit-text-fill-color: rgba(109,109,109,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#6d6d6d, #6d6d6d); text-align: left;}
+
+/* info right */
+.info .inner .right {width: 40%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: baseline;}
+.info .inner .right li {width: 100%; height: 12%; overflow: hidden;}
+.info .inner .right li .subTitle {font-family: var(--en2); font-weight: 200; font-size: var(--mainSubText); color: var(--gray); text-transform: uppercase; letter-spacing: 5px;}
+.info .inner .right li .content {font-family: var(--en2); font-size: var(--mainSubTitleEn); font-weight: 200; text-transform: uppercase; color: var(--black);}
+
+
+
+/* system */
+.system {width: 100%; height: 100vh;}
+.system .inner {width: 100%; height: 100%; padding: 75px 0; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; align-items: center; background: #fff;}
+
+/* system text */
+.system .inner .innerTitle {width: 65%; height: 10%; font-family: var(--en1); font-size: var(--mainSubTitleEn); font-weight: 200; color: var(--black); text-transform: uppercase; display: flex; align-items: center; border-top: 1px solid rgba(12,12,12,0.1); border-bottom: 1px solid rgba(12,12,12,0.1);}
+
+/* system img */
+.system .inner .site {width: 65%; height: 60%; display: flex; position: relative;}
+.system .inner .site:before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f5f6fa; transition: 0.6s; transition-delay: 0.3s; z-index: 1;}
+.system .inner .site:after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); transition: 0.6s; z-index: 2;}
+.system .inner .site li {width: 50%; position: relative;}
+.system .inner .site li img {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16%;}
+.system .inner .site li:last-child img {width: 100%}
+.system .inner .colorBar {width: 65%; height: 10%; display: flex; position: relative;}
+.system .inner .colorBar:after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); transition: 0.6s; z-index: 2;}
+.system .inner .colorBar:before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f5f6fa; transition: 0.6s; transition-delay: 0.3s; z-index: 1;}
+.system .inner .colorBar li {width: 20%; height: 100%; display: flex; align-items: center; justify-content: center; text-transform: uppercase; color: #fff; font-size: var(--mainTextEn); font-family: var(--en2); font-weight: 100;}
+.system .inner .colorBar li:nth-child(2) {color: var(--black); font-weight: 200;}
+.system .inner .colorBar li:nth-child(3) {color: var(--black); font-weight: 200;}
+.system .inner .colorBar li:nth-child(4) {color: var(--black); font-weight: 200;}
+.system .inner .fontBar {width: 65%; height: 10%; position: relative;}
+.system .inner .fontBar:after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); transition: 0.6s; z-index: 2;}
+.system .inner .fontBar:before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f5f6fa;  transition: 0.6s; transition-delay: 0.3s; z-index: 1;}
+.system .inner .fontBar img {width: 100%; height: 100%; object-fit: cover;}
+
+/* system animation */
+.system .inner.on .site:after {height: 0%;}
+.system .inner.on .site:before {height: 0%;}
+.system .inner.on .colorBar:after {width: 0%;}
+.system .inner.on .colorBar:before {width: 0%;}
+.system .inner.on .fontBar:after {width: 0%;}
+.system .inner.on .fontBar:before {width: 0%;}
+
+
+
+/* feature */
+.feature {width: 100%; height: 100vh;}
+.feature .inner {width: 100%; height: 100%; padding: 75px 0; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; align-items: center; background: #fff;}
+
+/* feature text */
+.feature .inner .innerTitle {width: 65%; height: 10%; font-family: var(--en1); font-size: var(--mainSubTitleEn); font-weight: 200; color: var(--black); text-transform: uppercase; display: flex; align-items: center; border-top: 1px solid rgba(12,12,12,0.1); border-bottom: 1px solid rgba(12,12,12,0.1);}
+
+/* feature img */
+.feature .inner .imgBox {width: 65%; height: 80%; display: flex;}
+.feature .inner .imgBox li {width: 50%; height: 100%; position: relative;}
+
+/* feature img left */
+.feature .inner .imgBox .left:after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); transition: 0.6s; z-index: 2;}
+.feature .inner .imgBox .left:before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f5f6fa; transition: 0.6s; transition-delay: 0.3s; z-index: 1;}
+.feature .inner .imgBox .left img {width: 100%; height: 100%; object-fit: cover;}
+
+/* feature img right */
+.feature .inner .imgBox .right .list {width: 100%; height: 100%; display: flex; padding-top: 200px; box-sizing: border-box;}
+.feature .inner .imgBox .right .list li {display: flex; flex-direction: column; align-items: center;}
+.feature .inner .imgBox .right .list {text-align: center;}
+.feature .inner .imgBox .right .list li .subTitle {font-family: var(--en1); font-size: var(--mainTextEn); font-weight: 200; text-transform: uppercase; margin-bottom: 20px; color: var(--black);}
+.feature .inner .imgBox .right .list li .text {font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200; text-transform: uppercase; text-align: center; margin-bottom: 50px; color: var(--gray);}
+
+/* feature animation */
+.feature .inner.on .imgBox .left:after {height: 0%;}
+.feature .inner.on .imgBox .left:before {height: 0%;}
+
+
+
+/* run */
+.run {width: 100%; height: 100vh;}
+.run .inner {width: 100%; height: 100%; padding: 75px 0; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; align-items: center; background: #fff;}
+
+/* run text */
+.run  .inner .innerTitle {width: 65%; height: 10%; font-family: var(--en1); font-size: var(--mainSubTitleEn); font-weight: 200; color: var(--black); text-transform: uppercase; display: flex; align-items: center; border-top: 1px solid rgba(12,12,12,0.1); border-bottom: 1px solid rgba(12,12,12,0.1);}
+
+/* run img */
+.run .inner .img {width: 65%; height: 80%; position: relative; cursor: pointer;}
+.run .inner .img:after {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); transition: 0.6s; z-index: 2;}
+.run .inner .img:before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #f5f6fa; transition: 0.6s; transition-delay: 0.3s; z-index: 1;}
+.run .inner .img img {width: 100%; height: 100%; object-fit: cover;}
+
+/* run animation */
+.run .inner.on .img:after {height: 0%;}
+.run .inner.on .img:before {height: 0%;}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Trivia Master</title>
+   
+   <!-- style -->
+   <link rel="stylesheet" href="css/01.reset.css">
+   <link rel="stylesheet" href="css/02.common.css">
+   <link rel="stylesheet" href="css/03.loading.css">
+   <link rel="stylesheet" href="css/04.detail.css">
+   <link rel="stylesheet" href="css/05.responsive.css">
+   
+   <!-- script js -->
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/splitting.min.js"></script>
+   <script src="js/simpleParallax.js"></script>
+   <script src="js/window.curDot.min.js"></script>
+   
+   <!-- js cdn -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+   
+   <!-- favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+</head>
+
+<body>
+
+   <!-- loading -->
+   <div class="loading">
+      <div class="spinner-box">
+         <div class="circle-border">
+            <div class="circle-core"></div>
+         </div>
+      </div>
+      <div class="loadBox">
+         <span>Detailed</span>
+      </div>
+   </div>
+
+   <!-- gnb -->
+   <section class="gnb">
+      <img class="close clickable" src="img/icon/close.png" alt="메뉴 닫기">
+      <ul>
+         <li><a href="../../../index.html" class="clickable" data-splitting>index</a></li>
+         <li><a href="../../about/about.html" class="clickable" data-splitting>about</a></li>
+         <li><a href="../../work/work.html" class="clickable" data-splitting>work</a></li>
+         <li><a href="../../process/process.html" class="clickable" data-splitting>portfolio</a></li>
+         <li id="gnb-background"></li>
+      </ul>
+   </section>
+
+   <!-- wrap -->
+   <div class="wrap">
+
+      <!-- header -->
+      <header>
+         <h1 class="logo clickable"><a href="../../../index.html"><img src="img/logo/logo(white).png" class="whiteLogo" alt="흰색 로고"><img src="img/logo/logo(black).png" class="blackLogo" alt="검은색 로고"></a></h1>
+         <nav class="menuOpen clickable">
+            <ul class="menu">
+               <li data-splitting>Menu</li>
+               <li class="menuBtn">
+                  <img src="img/icon/menu.png" alt="메뉴 버튼">
+                  <img src="img/icon/menu(black).png" class="blackMenu" alt="검은색 메뉴 버튼">
+               </li>
+            </ul>
+         </nav>
+      </header>
+
+      <!-- section title -->
+      <section class="title">
+         <div class="inner">
+            <img class="titleImg" src="img/img/title.png" alt="데스크탑속 한국소비자원">
+         </div>
+      </section>
+
+      <!-- section info -->
+      <section class="info">
+         <div class="inner">
+            <div class="left">
+               <span class="innerTitle mask">
+                  <span>korea</span><br>
+                  <span>consumer</span>
+               </span>
+               <span class="text mask">
+                  <span>
+                     한국소비자원은 1987년 7월1일 소비자보호법에 의하여<br>
+                     '한국소비자보호원'으로 설립된 후, 2007년 3월 28일  소비자기본법에 의해<br>
+                     '한국소비자원'으로 기관명이 변경되었습니다.<br>
+                     한국소비자원은 소비자의 권익을 증진하고 소비생활의 향상을   도모하며<br>
+                     국민경제의 발전에 이바지하기 위하여 국가에서 설립한   전문기관입니다.
+                  </span>
+               </span>
+            </div>
+            <ul class="right">
+               <li class="mask">
+                  <p class="subTitle">
+                     services
+                  </p>
+                  <p class="content">
+                     Research on systems
+                  </p>
+               </li>
+               <li class="mask">
+                  <p class="subTitle">
+                     site name
+                  </p>
+                  <p class="content">
+                     korea consumer agency
+                  </p>
+               </li>
+               <li class="mask">
+                  <p class="subTitle">
+                     year
+                  </p>
+                  <p class="content">
+                     2023
+                  </p>
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- section system -->
+      <section class="system">
+         <div class="inner">
+            <div class="innerTitle">
+               system
+            </div>
+            <ul class="site">
+               <li>
+                  <img src="img/img/logo.png" alt="한국소비자원 로고">
+               </li>
+               <li>
+                  <img src="img/img/system.png" alt="태블릿 속 한국소비자원">
+               </li>
+            </ul>
+            <ul class="colorBar">
+               <li data-color="#f57454"></li>
+               <li data-color="#c5cdbe"></li>
+               <li data-color="#e89b91"></li>
+               <li data-color="#dfcfc0"></li>
+               <li data-color="#454545"></li>
+            </ul>
+            <div class="fontBar">
+               <img src="img/img/fontbar.png" alt="한국소비자원 폰트">
+            </div>
+         </div>
+      </section>
+
+      <!-- section feature-->
+      <section class="feature">
+         <div class="inner">
+            <div class="innerTitle">
+               feature
+            </div>
+            <ul class="imgBox">
+               <li class="left">
+                  <img src="img/img/feature.png" alt="데스크탑 속 한국소비자원">
+               </li>
+               <li class="right">
+                  <ul class="list">
+                     <li>
+                        <p class="subTitle">
+                           used language
+                        </p>
+                        <span class="text">
+                           HTML<br>
+                           CSS<br>
+                           JAVASCRIPT
+                        </span>
+                        <p class="subTitle">
+                           used plugin & library
+                        </p>
+                        <span class="text">
+                           jquery<br>
+                           scrolla
+                        </span>
+                     </li>
+                     <li>
+                        <p class="subTitle">
+                           Implemented features
+                        </p>
+                        <span class="text">
+                           text animation<br>
+                           image animation<br>
+                           image hover effect<br>
+                        </span>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- section run -->
+      <section class="run">
+         <div class="inner">
+            <div class="innerTitle">
+               run
+            </div>
+            <p class="img clickable">
+               <img src="img/img/run.png" alt="데스크탑">
+            </p>
+         </div>
+      </section>
+   </div>
+
+
+   <!-- script -->
+   <script src="js/common.js"></script>
+   <script src="js/plugin.js"></script>
+   <script src="js/detail.js"></script>
+</body>
+
+</html>

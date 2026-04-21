@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Portfolio</title>
+
+   <!-- style -->
+   <link rel="stylesheet" href="css/01.reset.css">
+   <link rel="stylesheet" href="css/02.common.css">
+   <link rel="stylesheet" href="css/03.loading.css">
+   <link rel="stylesheet" href="css/04.index.css">
+   <link rel="stylesheet" href="css/05.responsive.css">
+
+   <!-- script jquery-->
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/splitting.min.js"></script>
+   <script src="js/simpleParallax.js"></script>
+   <script src="js/window.curDot.min.js"></script>
+
+   <!-- script cdn -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   <!-- favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+</head>
+
+<body>
+
+   <!-- loading -->
+   <div class="loading">
+      <div class="spinner-box">
+         <div class="circle-border">
+            <div class="circle-core"></div>
+         </div>
+      </div>
+      <div class="loadBox">
+         <span>welcome</span>
+      </div>
+   </div>
+
+   <!-- gnb -->
+   <section class="gnb">
+      <img class="close clickable" src="img/icon/close.png" alt="메뉴 닫기">
+      <ul>
+         <li><a href="index.html" class="clickable" data-splitting>index</a></li>
+         <li><a href="portfolio website/about/about.html" class="clickable" data-splitting>about</a></li>
+         <li><a href="portfolio website/work/work.html" class="clickable" data-splitting>work</a></li>
+         <li><a href="portfolio website/process/process.html" class="clickable" data-splitting>process</a></li>
+         <li id="gnb-background"></li>
+      </ul>
+   </section>
+
+   <!-- wrap -->
+   <div class="wrap">
+
+      <!-- header -->
+      <header>
+         <h1 class="logo clickable"><a href="index.html"><img src="img/logo/logo(white).png" class="흰색 로고"
+                  alt="logo"><img src="img/logo/logo(black).png" class="blackLogo" alt="검은색 로고"></a></h1>
+         <nav class="menuOpen clickable">
+            <ul class="menu">
+               <li data-splitting>Menu</li>
+               <li class="menuBtn">
+                  <img src="img/icon/menu.png" alt="메뉴 버튼">
+                  <img src="img/icon/menu(black).png" class="blackMenu" alt="검은색 메뉴 버튼">
+               </li>
+            </ul>
+         </nav>
+      </header>
+
+      <!-- section title -->
+      <section class="title">
+         <div class="inner">
+            <h2 class="headTitle">
+               <p><span class="bold">web publishing</span></p>
+               <p><span>portfolio website</span></p>
+            </h2>
+            <div class="mainTextEn">
+               <p><span>40+ projects built,</span></p>
+               <p><span>208 sites maintained,</span></p>
+               <p><span>one consistent standard.</span></p>
+            </div>
+         </div>
+      </section>
+
+      <!-- section about -->
+      <section class="about">
+         <div class="inner">
+            <div class="imgBox">
+               <img class="aboutImgBox" src="img/img/title.png" alt="코딩 작업 중인 노트북">
+            </div>
+            <div class="textBox">
+               <span class="mask">
+                  <span class="text">
+                     Nil sine magno vita labore<br>
+                     dedit mortalibus.<br>
+                     Life has given nothing to mortals<br>
+                     without great labor.
+                  </span>
+               </span>
+            </div>
+         </div>
+      </section>
+
+      <!-- section about02 -->
+      <section class="about02">
+         <div class="inner">
+            <ul>
+               <li class="date">
+                  <span class="mask">
+                     <span>2023 — 2026</span>
+                  </span>
+               </li>
+               <li class="siteTitle">
+                  <span class="mask">
+                     <span>Web Publishing & Operation</span>
+                  </span>
+               </li>
+               <li class="motto">
+                  <span class="mask">
+                     <span class="title">"구축에서 운영까지, 전 과정을 수행합니다."</span>
+                  </span>
+                  <span class="mask">
+                     <span class="subtitle">에이전시에서 2년 4개월간 40건+ 홈페이지 퍼블을 수행하고<br>
+                        208개사 웹사이트 유지보수를 담당했습니다.<br>
+                        GSAP 기반 인터랙션 UI 구현부터 카카오지도·Chart.js API 연동,<br>
+                        모바일 시안 없는 환경에서의 반응형 독립 설계까지—<br>
+                        판단하고 실행하는 실무자입니다.</span>
+                  </span>
+                  <div class="moreBtn clickable">
+                     <a href="portfolio website/about/about.html">Learn More<span class="btnCircle"></span></a>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- section gallery -->
+      <section class="gallery">
+         <div class="inner">
+            <ul class="box-wrapper">
+               <li class="box" style="--a:0">
+                  <div class="maskBox"><img src="img/img(gallery)/caesar.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:1">
+                  <div class="maskBox"><img src="img/img(gallery)/airplane.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:2">
+                  <div class="maskBox"><img src="img/img(gallery)/cherry blossom2.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:3">
+                  <div class="maskBox"><img src="img/img(gallery)/cherry blossom.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:4">
+                  <div class="maskBox"><img src="img/img(gallery)/soccer.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:5">
+                  <div class="maskBox"><img src="img/img(gallery)/walk.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:6">
+                  <div class="maskBox"><img src="img/img(gallery)/bridge.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:7">
+                  <div class="maskBox"><img src="img/img(gallery)/aurelius.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:8">
+                  <div class="maskBox"><img src="img/img(gallery)/babylon.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:9">
+                  <div class="maskBox"><img src="img/img(gallery)/museum.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:10">
+                  <div class="maskBox"><img src="img/img(gallery)/pottery.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:11">
+                  <div class="maskBox"><img src="img/img(gallery)/classic.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:12">
+                  <div class="maskBox"><img src="img/img(gallery)/graduation.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:13">
+                  <div class="maskBox"><img src="img/img(gallery)/presentation.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:14">
+                  <div class="maskBox"><img src="img/img(gallery)/ocean.png" class="innerBox" alt="사진"></div>
+               </li>
+               <li class="box" style="--a:15">
+                  <div class="maskBox"><img src="img/img(gallery)/lunar eclipse.png" class="innerBox" alt="사진"></div>
+               </li>
+            </ul>
+            <div class="moreAbout clickable">
+               <a href="portfolio website/about/about.html">View About<span class="btnCircle"></span></a>
+            </div>
+            <div class="progressbar">
+               <span class="mask">
+                  <span>|||||||||||||||</span>
+               </span>
+            </div>
+         </div>
+      </section>
+
+      <!-- section resolution -->
+      <section class="resolution">
+         <span class="mask">
+            <span>
+               구축·운영·유지보수 전 과정을 직접 판단하고 실행하는
+            </span>
+         </span>
+         <span class="mask">
+            <span class="bold">
+               콘텐츠 중심의 웹 실무자가 되고자 합니다.
+            </span>
+         </span>
+         <div class="moreBtn2 clickable">
+            <a href="portfolio website/about/about.html" class="btn2">
+               <span>Click!</span>
+               <span>View All he'story</span>
+            </a>
+         </div>
+      </section>
+
+      <!-- section work -->
+      <section class="work" id="work">
+         <div class="inner">
+            <div class="sectionName">
+               <span class="mask">
+                  <span>[ My Works ]</span>
+               </span>
+            </div>
+            <div class="cylinder">
+               <div class="container">
+                  <div class="container-box">
+                     <span style="--b:1"><i>ETEVERS</i> Group</span>
+                     <span style="--b:2"><i>HAATZ</i></span>
+                     <span style="--b:3"><i>Hanyang</i> Univ. ME</span>
+                     <span style="--b:4"><i>Kyungshin</i> Holdings</span>
+                     <span style="--b:5"><i>KFIA</i> R&D Center</span>
+                     <span style="--b:6">beetopia</span>
+                     <span style="--b:7"><i>Rise</i> Education Korea</span>
+                     <span style="--b:8"><i>Law firm</i> Hwajaeng</span>
+                     <span style="--b:9"><i>Direct</i> Entertainment</span>
+                     <span style="--b:10">Chemon</span>
+                     <span class="blank" style="--b:11">blank</span>
+                     <span class="blank" style="--b:12">blank</span>
+                     <span class="blank" style="--b:13">blank</span>
+                     <span class="blank" style="--b:14">blank</span>
+                     <span class="blank" style="--b:15">blank</span>
+                     <span class="blank" style="--b:16">blank</span>
+                  </div>
+               </div>
+            </div>
+            <ul class="textBox">
+               <li class="date">
+                  <span class="mask">
+                     <span>2023 — 2026</span>
+                  </span>
+               </li>
+               <li class="siteTitle">
+                  <span class="mask">
+                     <span>Web Publishing & Operation</span>
+                  </span>
+               </li>
+               <li class="goal">
+                  <span class="mask">
+                     <span class="goalTitle">built to last</span>
+                     <span class="goalText">디자인 시안을 기반으로 HTML·CSS·JS 퍼블을 단독 수행하고<br>
+                        GSAP ScrollTrigger 기반 인터랙션 UI와 외부 API 연동까지 구현했습니다.<br>
+                        모바일 시안이 없는 환경에서도 독립적인 기준으로 반응형을 설계하고<br>
+                        208개사 유지보수를 통해 콘텐츠 운영 과정을 경험했습니다.</span>
+                  </span>
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- section ncs -->
+      <section class="ncs">
+         <div class="inner">
+            <div class="marquee">
+               <ul class="marquee-content">
+                  <li class="bold">REAL EXPERIENCE.</li>
+                  <li>REAL EXPERIENCE.</li>
+                  <li class="bold">REAL EXPERIENCE.</li>
+                  <li>REAL EXPERIENCE.</li>
+               </ul>
+               <ul class="marquee-content" aria-hidden="true">
+                  <li class="bold">REAL EXPERIENCE.</li>
+                  <li>REAL EXPERIENCE.</li>
+                  <li class="bold">REAL EXPERIENCE.</li>
+                  <li>REAL EXPERIENCE.</li>
+               </ul>
+            </div>
+            <div class="ncsList-container">
+               <ul class="ncsList">
+                  <li class="ncsName">
+                     SKILL 01
+                  </li>
+                  <li class="ncsTitle">
+                     Interaction UI
+                  </li>
+                  <li class="info">
+                     <p class="infoTitle">GSAP <span class="bold">ScrollTrigger</span></p>
+                     <p class="hiddenText">
+                        GSAP 기반 스크롤 인터랙션 구현<br>
+                        지디웹 우수작 선정 (그룹사 메인 리뉴얼)<br>
+                        스무스 스크롤 적용
+                     </p>
+                     <div class="moreBtn clickable">
+                        <a href="portfolio website/work/work.html">Learn More<span class="btnCircle"></span></a>
+                     </div>
+                  </li>
+               </ul>
+               <ul class="ncsList" style="--c:1">
+                  <li class="ncsName">
+                     SKILL 02
+                  </li>
+                  <li class="ncsTitle">
+                     Responsive Web
+                  </li>
+                  <li class="info">
+                     <p class="infoTitle">mobile <span class="bold">independent</span></p>
+                     <p class="hiddenText">
+                        모바일 시안 미제공 환경 반응형 독립 설계<br>
+                        공통 레이아웃 기준 수립 및 반복 적용<br>
+                        40건+ 납품 건 반응형 수행
+                     </p>
+                     <div class="moreBtn clickable">
+                        <a href="portfolio website/work/work.html">Learn More<span class="btnCircle"></span></a>
+                     </div>
+                  </li>
+               </ul>
+               <ul class="ncsList" style="--c:2">
+                  <li class="ncsName">
+                     SKILL 03
+                  </li>
+                  <li class="ncsTitle">
+                     Web Operation
+                  </li>
+                  <li class="info">
+                     <p class="infoTitle">208 sites <span class='bold'>maintained</span></p>
+                     <p class="hiddenText">
+                        208개사 웹사이트 유지보수 담당<br>
+                        텍스트·이미지 교체부터 메인 리뉴얼까지<br>
+                        자체 CMS 기반 콘텐츠 운영 경험
+                     </p>
+                     <div class="moreBtn clickable">
+                        <a href="portfolio website/work/work.html">Learn More<span class="btnCircle"></span></a>
+                     </div>
+                  </li>
+               </ul>
+               <ul class="ncsList" style="--c:3">
+                  <li class="ncsName">
+                     SKILL 04
+                  </li>
+                  <li class="ncsTitle">
+                     API Integration
+                  </li>
+                  <li class="info">
+                     <p class="infoTitle">data <span class='bold'>visualization</span></p>
+                     <p class="hiddenText">
+                        카카오지도 API — 구매처·고객지원 위치 구현<br>
+                        Chart.js — 투자정보 페이지 데이터 시각화<br>
+                        외부 라이브러리 연동 실무 적용
+                     </p>
+                     <div class="moreBtn clickable">
+                        <a href="portfolio website/work/work.html">Learn More<span class="btnCircle"></span></a>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+
+      <!-- section contact -->
+      <section class="contact">
+         <div class="inner">
+            <div class="textBox">
+               <p class="contactTitle">discover<br>
+                  <span class="bold">my portfolio</span>
+               </p>
+               <p>thank you for investing your time.</p>
+            </div>
+            <ul class="bottomNav">
+               <li class="contactBtn clickable">
+                  <a href="#">
+                     <span>Contact</span>
+                     <img src="img/icon/contact.png" alt="연락 버튼">
+                  </a>
+               </li>
+               <li class="rights">2026 c.hyun all rights reserved</li>
+               <li class="topBtn clickable">
+                  <a href="#">
+                     <img src="img/icon/topBtn.png" alt="탑 버튼">
+                     <span>Back top</span>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </section>
+   </div>
+
+
+   <!-- script -->
+   <script src="js/common.js"></script>
+   <script src="js/plugin.js"></script>
+   <script src="js/index.js"></script>
+</body>
+
+</html>

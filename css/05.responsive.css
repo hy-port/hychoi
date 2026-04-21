@@ -1,0 +1,141 @@
+/* pc */
+@media all and (max-width: 1440px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 3.333vw;
+      --mainSubTitleEn: 1.875vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 1.3vw;
+      --mainTextKo: 1.2vw;
+      --mainSubText: 1.15vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 12%;}
+}
+
+/* laptop */
+@media all and (max-width: 1280px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 3.333vw;
+      --mainSubTitleEn: 1.875vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 1.5vw;
+      --mainTextKo: 1.4vw;
+      --mainSubText: 1.35vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .gallery .inner .box-wrapper .box {width: 33%; left: calc(35.1% * var(--a));}
+
+   .resolution .moreBtn2 a {perspective: 300px;}
+
+   .ncs .inner .ncsList-container .ncsList .info {width: 40%;}
+   .ncs .inner .ncsList-container .ncsList .info .moreBtn {margin-top: 30px;}
+
+   .contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 15%;}
+   .contact .inner .bottomNav .rights {width: 25%;}
+}
+
+/* tablet */
+@media all and (max-width: 768px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 4vw;
+      --mainSubTitleEn: 5vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 2.5vw;
+      --mainTextKo: 2.5vw;
+      --mainSubText: 2.4vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .title .inner {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+   
+   .about .inner .textBox {display: none;}
+
+   .about02 .inner ul li:nth-child(1) {display: none;}
+   .about02 .inner ul li:nth-child(2) {display: none;}
+
+   .gallery .inner .box-wrapper .box {width: 33%; left: calc(35.1% * var(--a));}
+
+   .resolution .moreBtn2 a {perspective: 300px;}
+
+   .work .inner .textBox .goal {width: 100%;}
+   .work .inner .textBox .goal .mask {width: 100%; text-align: center;}
+   .work .inner .textBox .goal .mask .goalTitle {display: block;}
+   .work .inner .textBox li:nth-child(1) {display: none;}
+   .work .inner .textBox li:nth-child(2) {display: none;}
+
+   .ncs .inner .ncsList-container .ncsList .ncsName {display: none;}
+   .ncs .inner .ncsList-container .ncsList .ncsTitle {display: none;}
+   .ncs .inner .ncsList-container .ncsList .info {width: 40%;}
+   .ncs .inner .ncsList-container .ncsList .info .moreBtn {margin-top: 30px;}
+   .ncs .inner .ncsList-container .ncsList .info {width: 100%; text-align: center;}
+   .ncs .inner .ncsList-container .ncsList .info .infoTitle .bold {display: block;}
+   .ncs .inner .ncsList-container .ncsList.active .info .hiddenText {line-height: 1.8;}
+
+   .contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 25%;}
+   .contact .inner .bottomNav .rights {display: none;}
+}
+
+/* mobile */
+@media all and (max-width: 480px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 4vw;
+      --mainSubTitleEn: 5vw;
+      --mainSubTitleKo: 2.5vw;
+      --mainTextEn: 4vw;
+      --mainTextKo: 4vw;
+      --mainSubText: 3.5vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   header {padding: 0 40px;}
+
+   .title {height: 100vh; padding: 0;}
+   .title .inner .mainTextEn {display: none;}
+
+   .about .inner .textBox {display: none;}
+
+   .about02 {height: 42vh;}
+   .about02 .inner ul li:nth-child(1) {display: none;}
+   .about02 .inner ul li:nth-child(2) {display: none;}
+   .about02 .inner ul .motto .mask .subtitle {font-size: var(--mainSubTitleKo);}
+
+   .gallery .inner .box-wrapper .box {width: 33%; left: calc(35.1% * var(--a));}
+
+   .resolution .moreBtn2 a {perspective: 350px;}
+
+   .work .inner .textBox .goal {width: 100%;}
+   .work .inner .textBox .goal .mask {width: 100%; text-align: center;}
+   .work .inner .textBox .goal .mask .goalTitle {display: block;}
+   .work .inner .textBox li:nth-child(1) {display: none;}
+   .work .inner .textBox li:nth-child(2) {display: none;}
+   .work .inner .textBox .goal .mask .goalText {font-size: var(--mainSubTitleKo);}
+
+   .ncs .inner .ncsList-container .ncsList .ncsName {display: none;}
+   .ncs .inner .ncsList-container .ncsList .ncsTitle {display: none;}
+   .ncs .inner .ncsList-container .ncsList .info {width: 40%;}
+   .ncs .inner .ncsList-container .ncsList .info .moreBtn {margin-top: 30px;}
+   .ncs .inner .ncsList-container .ncsList .info {width: 100%; text-align: center;}
+   .ncs .inner .ncsList-container .ncsList .info .infoTitle .bold {display: block;}
+   .ncs .inner .ncsList-container .ncsList.active .info .hiddenText {line-height: 1.8;}
+
+   .contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 40%;}
+   .contact .inner .bottomNav .rights {display: none;}
+}

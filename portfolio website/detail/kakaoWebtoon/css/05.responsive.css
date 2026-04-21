@@ -1,0 +1,90 @@
+/* pc */
+@media all and (max-width: 1440px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 3.333vw;
+      --mainSubTitleEn: 1.875vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 1.3vw;
+      --mainTextKo: 1.2vw;
+      --mainSubText: 1.15vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .info .inner .right li .subTitle {text-align: right;}
+   .info .inner .right li .content {text-align: right;}
+}
+
+/* laptop */
+@media all and (max-width: 1280px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 3.333vw;
+      --mainSubTitleEn: 1.875vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 1.5vw;
+      --mainTextKo: 1.4vw;
+      --mainSubText: 1.35vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .feature .inner .imgBox li.left {display: none;}
+   .feature .inner .imgBox li.right {width: 100%;}
+   .feature .inner .imgBox .right .list {padding-top: 100px;}
+}
+
+/* tablet */
+@media all and (max-width: 768px) {
+   :root {
+      /* font size */
+      --headTitle: 5.990vw;
+      --mainTitleEn: 3.854vw;
+      --mainTitleKo: 4vw;
+      --mainSubTitleEn: 5vw;
+      --mainSubTitleKo: 1.667vw;
+      --mainTextEn: 2.5vw;
+      --mainTextKo: 2.5vw;
+      --mainSubText: 2.4vw;
+   }
+
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   .info .inner .left {display: none;}
+   .info .inner .right {width: 100%;}
+   .info .inner .right li .subTitle {text-align: center;}
+   .info .inner .right li .content {text-align: center;}
+
+   .feature .inner .imgBox li.left {display: none;}
+   .feature .inner .imgBox li.right {width: 100%;}
+   .feature .inner .imgBox .right .list {padding-top: 100px;}
+
+   .run .inner .img img {height: 70%;}
+}
+
+/* mobile */
+@media all and (max-width: 480px) {
+   .loading .loadBox {font-size: var(--headTitle);}
+
+   header {padding: 0 40px;}
+
+   .info .inner .left {display: none;}
+   .info .inner .right {width: 100%; text-align: center;}
+
+   .system .inner .site li {width: 100%;}
+   .system .inner .site li:last-child {display: none;}
+   .system .inner .colorBar li {font-size: var(--mainSubTitleKo);}
+   .system .inner .fontBar {display: none;}
+
+   .feature .inner .imgBox .right .list {flex-direction: column; align-items: center;}
+   .feature .inner .imgBox li.left {display: none;}
+   .feature .inner .imgBox li.right {width: 100%;}
+   .feature .inner .imgBox .right .list {padding-top: 100px;}
+
+   .run .inner .img img {height: 50%;}
+}

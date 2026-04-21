@@ -1,0 +1,323 @@
+/* header */
+header {width: 100vw; height: 14vh; position: fixed; top: 0; left: 0; background: transparent; display: flex; justify-content: space-between; align-items: center; padding: 0 80px; box-sizing: border-box; overflow: hidden; z-index: 10;}
+
+/* header logo */
+header .logo {width: 100px; height: 40px; transition: transform 0.4s;}
+header .logo a {display: block; width: 100%; display: flex; align-self: center; position: relative;}
+header .logo a img {width: 100%; position: absolute;}
+header .logo a .blackLogo {opacity: 0;}
+header .logo a .whiteLogo {opacity: 1;}
+
+/* header menuOpen */
+header .menuOpen {width: 100px; color: var(--white); cursor: pointer; transition: transform 0.4s;}
+header .menuOpen .menu {display: flex; align-items: center; justify-content: space-between;}
+header .menuOpen .menu li {font-family: var(--en2); font-size: var(--mainSubText);}
+header .menuOpen .menu li.menuBtn {position: relative;}
+header .menuOpen .menu li.menuBtn .blackMenu {opacity: 0;}
+header .menuOpen .menu li.menuBtn img {height: 15px; position: absolute; right: 0; top: 50%; transform: translateY(-50%); transition: transform 0.4s;}
+header .menuOpen .menu li.words {margin-top: 12px;}
+header .menuOpen .menu li .char {display: inline-block; position: relative; color: transparent; overflow: hidden;}
+header .menuOpen.blackColor .menu li .char:before, header .menuOpen.blackColor .menu li .char:after {color: var(--black);}
+header .menuOpen .menu li .char:before, header .menuOpen .menu li .char:after {content: attr(data-char); position: absolute; top: 0; left: 0; color: var(--white); transition: transform 0.4s; transition-delay: calc(30ms * var(--char-index));}
+header .menuOpen .menu li .char:before {transform: translateY(100%);}
+
+/* header toggle */
+header.active .logo, header.active .menuOpen {transform: translateY(-14vh);}
+header .menuOpen.blackColor .menu li.menuBtn .blackMenu {opacity: 1;}
+
+/* header animation */
+header .menuOpen:hover .menu li .char:before {transform: translateY(0%);}
+header .menuOpen:hover .menu li .char:after {transform: translateY(-100%);}
+header .menuOpen:hover .menu li.menuBtn img {transform: rotate(90deg) translateX(-5px); transform-origin: center center;}
+
+
+
+/* .gnb */
+.gnb {position: fixed; z-index: 20; top: 0; left: 100%; width: 100%; height: 100vh; background: var(--black); display: flex; justify-content: center; align-items: center; transition: 1s;}
+
+/* gnb close */
+.gnb .close {height: 30px; position: absolute; top: 6%; right: 5%; transition: all 0.4s; cursor: pointer; opacity: 0.5;}
+
+/* gnb content */
+.gnb ul {margin-top: 100px; box-sizing: border-box;}
+.gnb ul li a {display: block; color: var(--white); font-family: var(--en1); font-weight: 200; font-size: var(--headTitle); text-transform: uppercase; text-align: center; transition: opacity 0.3s;}
+.gnb ul li a .char {display: inline-block; position: relative; color: transparent; overflow: hidden; line-height: 1;}
+.gnb ul li a .char:before {font-weight: 100;}
+.gnb ul li a .char:before, .gnb ul li a .char:after {content: attr(data-char); position: absolute; top: 0; left: 0; color: var(--white); transition: transform 0.4s; transition-delay: calc(30ms * var(--char-index));}
+#gnb-background {width: 100%; height: 100%; background-image: linear-gradient(to bottom right, rgba(255,255,255,0.1) 3%, transparent 3%), linear-gradient(to top left, rgba(255,255,255,0.1) 3%, transparent 3%),linear-gradient(to top right, rgba(255,255,255,0.1) 3%, transparent 3%), linear-gradient(to bottom left, rgba(255,255,255,0.1) 3%, transparent 3%); background-position: 0% 0%; background-size: 4vw 4vw; position: absolute; top: 0; left: 0; z-index: -1; transition: opacity 0.8s ease, background-size 0.8s ease, background-position 0.8s ease; pointer-events: none;}
+
+/* gnb toggle */
+.gnb.on {width: 100%; height: 100vh; left: 0; transition: 1s;}
+.gnb ul.active li a {opacity: 0.2;}
+.gnb ul.active li:hover a {opacity: 1;}
+
+/* .gnb animation */
+.gnb .close:hover {transform: scale(1.2); opacity: 1;}
+.gnb ul li a .char:before {transform: translateY(100%);}
+.gnb ul li a:hover .char:before {transform: translateY(0%);}
+.gnb ul li a:hover .char:after {transform: translateY(-100%);}
+
+
+
+/* title */
+.title {width: 100%; height: 60vh; text-align: center; padding-top: 18vh; box-sizing: border-box;}
+.title .inner {width: 100%; height: 100%; position: relative;}
+.title .inner p {overflow: hidden;}
+.title span {display: inline-block;}
+
+/* title mainText */
+.title .inner h2 {font-family: var(--en1); color: var(--white); font-size: var(--headTitle); text-transform: uppercase; line-height: 1.1;}
+.title .inner h2 span.bold {font-weight: 100;}
+.title .inner .mainTextEn {text-align: left; transform: translateX(50%); margin-top: 15px;}
+.title .inner .mainTextEn p span {font-family: var(--en2); font-size: var(--mainTextEn); color: var(--white); font-weight: 200;}
+
+/* title animation */
+.title .inner.motion p > span {transform: translateY(100%);}
+
+
+
+/* about */
+.about {width: 100%; height: 100vh;}
+.about .inner {width: 100%; height: 100%; position: relative; display: flex; justify-content: center; align-items: center;}
+.about .inner:after {content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: linear-gradient(to top, rgba(12, 12, 12, 1) 5%, rgba(12, 12, 12, 0) 30%);}
+
+/* about imgBox */
+.about .inner .imgBox {width: 100%; height: 100%; overflow: hidden;}
+.about .inner .imgBox img {width: 100vw; height: 100vh; object-fit: cover;}
+
+/* about marquee */
+.about .inner .marquee {position: absolute; bottom: 5%; width: 100%; z-index: 2; overflow: hidden;}
+.about .inner .marquee .marquee-content {font-family: var(--en1); font-weight: 100; font-size: var(--mainTitleEn); color: var(--white); text-transform: uppercase; display: flex; display: flex; align-items: center; white-space: nowrap; gap: 15px;}
+.about .inner .marquee .marquee-content01{margin-bottom: 20px; transform: translateX(calc(-35% - 15px));}
+.about .inner .marquee .marquee-content02 {transform: translateX(calc(10% - 15px));}
+.about .inner .marquee .marquee-content .bold {font-weight: 200;}
+
+
+
+/* section sign */
+.sign {width: 100%; height: 110vh;}
+.sign .inner {width: 100%; height: 100vh; margin-bottom: 10vh; position: relative;}
+
+/* sign text */
+.sign .inner .textBox {width: 100%; height: fit-content; position: absolute; top: 15%; font-family: var(--en1); font-size: var(--mainTitleEn); font-weight: 100; color: var(--white); text-transform: uppercase; text-align: center;}
+.sign .inner .textBox span {-webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+
+/* sign svg */
+.svg {position: absolute; width: 80%; bottom: 0%; right: -5%; transform: rotate(-20deg);}
+#svgAni01 {stroke-dasharray: 6534; stroke-dashoffset: 6534;}
+
+
+
+/* section research */
+.research {width: 100%; height: 720vh; position: relative;}
+.research #visual {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; stroke-dasharray: 4986; stroke-dashoffset: 4986;}
+/* 4986 */
+
+/* research svg */
+.research .svgPoint {width: 100%; height: 100%; position: absolute; top: 0;}
+.research .svgPoint .point {width: 30px; height: 30px; background: var(--white); border-radius: 50%; position: absolute; top: 0%; left: 0%; opacity: 0; transform: scale(50%); transition: 0.2s;}
+.research .svgPoint .point:before {content: ''; width: 100%; height: 100%; border-radius: 50%; position: absolute; top: 0; left: 0; background: var(--white); animation: point 1s infinite;}
+.research .svgPoint .point:after {content: ''; width: 100%; height: 100%; border-radius: 50%; position: absolute; top: 0; left: 0; background: var(--white); animation: point2 1s infinite;}
+
+/* research animation */
+.research .inner .innerContent .right .moreAbout:hover a .btnCircle {transform: scale(2); transform-origin: center; opacity: 1;}
+
+@keyframes point {
+    0% {transform: scale(50%); opacity: 1;}
+    100% {transform: scale(200%); opacity: 0;}
+}
+@keyframes point2 {
+    0% {transform: scale(50%); opacity: 1;}
+    100% {transform: scale(300%); opacity: 0;}
+}
+@keyframes research {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-110%);}
+}
+@keyframes research2 {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(110%);}
+}
+
+/* research point */
+.research .svgPoint .point01.on {opacity: 1;}
+.research .svgPoint .point02.on {opacity: 1;}
+.research .svgPoint .point03.on {opacity: 1;}
+.research .svgPoint .point04.on {opacity: 1;}
+.research .svgPoint .point05.on {opacity: 1;}
+.research .svgPoint .point06.on {opacity: 1;}
+.research .svgPoint .point01 {top: 5%; left: 47.4%;} /* 4725px */
+.research .svgPoint .point02 {top: 21.5%; left: 37.7%;} /* 3905px */
+.research .svgPoint .point03 {top: 38%; left: 50.8%;} /* 3158px */
+.research .svgPoint .point04 {top: 55.5%; left: 35.5%;} /* 2248px */
+.research .svgPoint .point05 {top: 71.5%; left: 55.2%;} /* 1405px */
+.research .svgPoint .point06 {top: 88.5%; left: 44.8%;} /* 552px */
+
+/* research content */
+.research .inner {width: 100%; height: 120vh;}
+.research .inner .innerTitle {width: 100%; height: 30%; display: flex; justify-content: center; align-items: center; flex-direction: column;}
+.research .inner .innerTitle .mask {display: block; font-family: var(--en1); font-size: var(--mainSubTitleEn); font-weight: 100; color: var(--white); text-transform: uppercase; overflow: hidden;}
+.research .inner .innerTitle .mask span {display: block; text-align: center;}
+.research .inner .innerContent {width: 80%; height: 70%; display: flex; margin: 0 auto;}
+
+/* research content left */
+.research .inner .innerContent .left {width: 50%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.research .inner .innerContent .left .img {width: 600px; height: 600px; position: relative; overflow: hidden;}
+.research .inner .innerContent .left .img img {width: 100%; height: 100%; object-fit: cover;}
+.research .inner .innerContent .left .img:before {content:''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1; background: var(--white);}
+.research .inner .innerContent .left .img:after {content:''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 2; background: var(--black);}
+
+/* research content right */
+.research .inner .innerContent .right {width: 50%; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;}
+.research .inner .innerContent .right .textTitle {font-family: var(--ko); font-size: var(--mainSubTitleKo); font-weight: 200; color: var(--white); margin-bottom: 50px;}
+.research .inner .innerContent .right .text {font-family: var(--ko); font-size: var(--mainTextKo); font-weight: 50; line-height: 2; margin-bottom: 100px;}
+.research .inner .innerContent .right .text span {-webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+
+/* research toggle */
+.research .inner.on .innerContent .left .img:before {animation-name: research; animation-duration: 0.6s; animation-delay: 0.8s; animation-fill-mode: forwards;}
+.research .inner.on .innerContent .left .img:after {animation-name: research; animation-duration: 0.6s; animation-fill-mode: forwards;}
+.research .inner.on:nth-child(2n) .innerContent .left .img:before {animation-name: research2; animation-duration: 0.6s; animation-delay: 0.8s; animation-fill-mode: forwards;}
+.research .inner.on:nth-child(2n) .innerContent .left .img:after {animation-name: research2; animation-duration: 0.6s; animation-fill-mode: forwards;}
+
+
+
+/* system */
+.system {width: 100%; height: 230vh;}
+.system .inner {width: 100%; height: 100%; background: var(--white); padding-top: 200px; box-sizing: border-box;}
+
+/* system content */
+.system .inner > ul {width: 100%; display: flex; justify-content: center;}
+.system .inner > ul > li:first-child {width: 40%; padding: 75px 0px 75px 150px; box-sizing: border-box;}
+.system .inner > ul .systemTitle {font-family: var(--en1); font-size: var(--mainSubTitleEn); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li:last-child {width: 60%; padding: 75px 0px 75px 150px; box-sizing: border-box;}
+.system .inner > ul > li .headingInner li {font-family: var(--en1); font-size: var(--headTitle); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li .headingInner li:nth-child(2) {font-family: var(--en1); font-size: var(--mainTitleEn); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li .headingInner li:nth-child(3) {font-family: var(--en1); font-size: var(--mainTitleKo); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li .headingInner li:nth-child(4) {font-family: var(--en1); font-size: var(--mainSubTitleEn); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li .headingInner li:nth-child(5) {font-family: var(--en1); font-size: var(--mainSubTitleKo); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li .textInner li {font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li .textInner li:nth-child(2) {font-family: var(--en2); font-size: var(--mainTextKo); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li .textInner li:nth-child(3) {font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200; color: var(--black); text-transform: uppercase;}
+.system .inner > ul > li .colorInner li {margin-bottom: 30px;}
+.system .inner > ul > li .colorInner .systemTitle {margin-bottom: 15px;}
+.system .inner > ul > li .colorInner li:first-child .colorBar {width: 700px; height: 30px; position: relative;}
+.system .inner > ul > li .colorInner li:first-child .colorBar:before {content: '#OCOCOC'; width: 50%; height: 100%; position: absolute; left: 0; background: var(--black); font-family: var(--en1); font-size: var(--mainSubText); font-weight: 200; color: var(--white); text-transform: uppercase; text-align: center; line-height: 30px;}
+.system .inner > ul > li .colorInner li:first-child .colorBar:after {content: '#fff'; width: 50%; height: 100%; position: absolute; right: 0; background: var(--white); font-family: var(--en1); font-size: var(--mainSubText); font-weight: 200; color: var(--black); text-transform: uppercase; text-align: center; line-height: 30px; border: 1px solid var(--black); box-sizing: border-box;}
+.system .inner > ul > li .colorInner li:nth-child(2) .colorBar {width: 700px; height: 30px; position: relative;}
+.system .inner > ul > li .colorInner li:nth-child(2) .colorBar:before {content: '#OCOCOC'; width: 100%; height: 100%; position: absolute; left: 0; background: var(--black); font-family: var(--en1); font-size: var(--mainSubText); font-weight: 200; color: var(--white); text-transform: uppercase; text-align: center; line-height: 30px;}
+.system .inner > ul > li .colorInner li:nth-child(3) .colorBar {width: 700px; height: 30px; position: relative;}
+.system .inner > ul > li .colorInner li:nth-child(3) .colorBar:before {content: '#6d6d6d'; width: 100%; height: 100%; position: absolute; left: 0; background: var(--gray); font-family: var(--en1); font-size: var(--mainSubText); font-weight: 200; color: var(--white); text-transform: uppercase; text-align: center; line-height: 30px;}
+.system .inner > ul > li .buttonInner {display: flex; align-items: center;}
+.system .inner > ul > li .buttonInner li {margin-right: 75px;}
+.system .inner > ul > li .moreBtn {color: var(--black); cursor: pointer; display: inline-block;}
+.system .inner > ul > li .moreBtn p {font-family: var(--en2); font-weight: 200; font-size: var(--mainTextEn); position: relative; display: inline-block;}
+.system .inner > ul > li .moreBtn p .btnCircle {display: inline-block; width: 10px; height: 10px; background: var(--black); border-radius: 50%; position: absolute; top: 0; right: -20%; transition: all 0.2s; opacity: 0.5;}
+.moreAbout a {display: inline-block; position: relative; font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 200; color: var(--black);}
+.moreAbout a .btnCircle {display: inline-block; width: 10px; height: 10px; background: var(--black); border-radius: 50%; position: absolute; top: 0; right: -20%; transition: all 0.2s; opacity: 0.5;}
+.moreBtn2 {width: 200px; height: 60px; border: 3px solid var(--black); border-radius: 30px; transition: all .2s;}
+.moreBtn2 a {display: block; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative; perspective: 250px;}
+.moreBtn2 a span {font-family: var(--en2); font-weight: 200; font-size: var(--mainSubText); color: var(--black); display: block; position: absolute; text-align: center; transition: all .2s;}
+.moreBtn2 a span:nth-child(1) {transform: rotateX(-90deg); transform-origin: 50% 50% -30px;}
+.moreBtn2 a span:nth-child(2) {transform: rotateX(0deg); transform-origin: 50% 50% -30px;}
+.system .inner > ul > li .iconInner {display: flex;}
+.system .inner > ul > li .iconInner li .img {width: 30px; height: 30px; margin-right: 30px;}
+.system .inner > ul > li .iconInner li .img img {width: 100%; height: 100%;}
+.system .inner > ul > li .logoInner li .img {width: 100px; height: 40px;}
+.system .inner > ul > li .logoInner li .img img {width: 100%; height: 100%;}
+
+/* system animation */
+.system .inner > ul > li .moreBtn:hover p .btnCircle {transform: scale(2); transform-origin: center; opacity: 1;}
+.moreAbout:hover a .btnCircle {transform: scale(2); transform-origin: center; opacity: 1;}
+.moreBtn2:hover {transform: scale(1.1);}
+.moreBtn2:hover a span:nth-child(1) {transform: rotateX(0deg);}
+.moreBtn2:hover a span:nth-child(2) {color: transparent; transform: rotateX(90deg);}
+
+
+
+/* information */
+.information {width: 100%; height: 100vh;}
+.information .inner {width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative;}
+
+/* information text */
+.information .inner .textBox {width: 100%; height: fit-content; position: absolute; top: 10%; font-family: var(--en1); font-size: var(--mainTitleEn); font-weight: 100; color: var(--white); text-transform: uppercase; text-align: center;}
+.information .inner .textBox span {-webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+
+/* information img */
+.information .inner .imgBox {width: 60%; height: 60%; position: absolute; top: 35%;}
+.information .inner .imgBox img {width: 100%; height: 100%; position: absolute; top: 0; left: 0%;}
+.information .inner .imgBox .infoSvg {width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+.information .inner .imgBox #infoSvg01 {stroke-dasharray: 920; stroke-dashoffset: 920;}
+.information .inner .imgBox #infoSvg02 {stroke-dasharray: 921; stroke-dashoffset: 921;}
+.information .inner .imgBox #infoSvg03 {stroke-dasharray: 646; stroke-dashoffset: 646;}
+.information .inner .imgBox #infoSvg04 {stroke-dasharray: 645; stroke-dashoffset: 645;}
+
+
+
+/* section sketch */
+.sketch {width: 100%; height: 100vh;}
+.sketch .inner {width: 100%; height: 100%; display: flex; position: relative; padding: 100px 0px 100px 100px; box-sizing: border-box;}
+.sketch .inner:before {content: ''; width: 90%; height: 80%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-top: 1px solid var(--gray); border-bottom: 1px solid var(--gray); z-index: 1; box-sizing: border-box; pointer-events: none;}
+.sketch .inner:after {content: ''; width: 90%; height: 80%; position: absolute; top: 50%; left: 80%; transform: translate(-50%, -50%); border-left: 1px solid var(--gray); z-index: 1; box-sizing: border-box; pointer-events: none;}
+
+/* sketch left */
+.sketch .inner .left {width: 30%; height: 100%; position: relative;}
+.sketch .inner .left > span {display: inline-block; margin-top: 150px; font-family: var(--en1); font-size: var(--mainTitleEn); font-weight: 100; color: var(--white); text-transform: uppercase; -webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+.swiper-button-next {position: absolute; top: 90%; left: 15%;}
+.swiper-button-next img {position: absolute; top: 0; left: 0;}
+.swiper-button-next img:last-child {opacity: 0; transition: 0.3s;}
+.swiper-button-prev {position: absolute; top: 90%; left: 0%;}
+.swiper-button-prev img {position: absolute; top: 0; left: 0;}
+.swiper-button-prev img:last-child {opacity: 0; transition: 0.3s;}
+.swiper-button-prev:after, .swiper-button-next:after {content: none;}
+.swiper-pagination {width: fit-content; height: fit-content; font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 100; color: var(--white); position: absolute; top: 80%; left: 3%;}
+
+/* sketch right */
+.sketch .inner .right {width: 70%; height: 100%; display: flex; align-items: center;}
+.sketch .inner .right .mySwiper {width: 80%; height: 80%; position: relative;}
+.sketch .inner .right .swiper-slide img {width: 100%; height: 95%; filter: grayscale(1);}
+.sketch .inner .right .swiper-slide:before {content:''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1; background: var(--white);}
+.sketch .inner .right .swiper-slide:after {content:''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 2; background: var(--black);}
+.sketch .inner .right .swiper-slide p {height: 5%; font-family: var(--en2); font-size: var(--mainSubText); font-weight: 100; color: var(--white); line-height: 30px; text-transform: uppercase;}
+
+/* sketch toggle */
+.sketch .inner .right.on .swiper-slide:before {animation-name: sketch; animation-duration: 0.6s; animation-delay: 0.8s; animation-fill-mode: forwards;}
+.sketch .inner .right.on .swiper-slide:after {animation-name: sketch; animation-duration: 0.6s; animation-fill-mode: forwards;}
+
+/* sketch animation */
+.swiper-button-next:hover img:last-child {opacity: 1;}
+.swiper-button-prev:hover img:last-child {opacity: 1;}
+@keyframes sketch {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(110%);}
+}
+
+
+
+/* contract */
+.contact {width: 100%; height: 100vh;}
+.contact .inner {width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative;}
+
+/* contract text */
+.contact .inner .textBox .contactTitle {text-align: center; font-family: var(--en1); font-size: var(--headTitle); text-transform: uppercase; color: var(--white); font-weight: 100; line-height: 1.1;}
+.contact .inner .textBox .contactTitle .bold {font-weight: 200;}
+.contact .inner .textBox p:last-child {text-align: center; color: var(--white); text-transform: uppercase; font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 100; margin-top: 50px;}
+
+/* contract nav */
+.contact .inner .bottomNav {width: 100%; height: 5vh; position: absolute; bottom: 2%; display: flex; justify-content: space-between;}
+.contact .inner .bottomNav .rights {width: 20%; color: var(--white); display: flex; align-items: center; justify-content: center; text-transform: uppercase; font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200;}
+.contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 10%; text-align: center;}
+.contact .inner .bottomNav .topBtn a, .contact .inner .bottomNav .contactBtn a {width: 100%; height: 100%; padding: 0 20%; display: block; display: flex; align-items: center; justify-content: space-between; overflow: hidden;}
+.contact .inner .bottomNav .topBtn a img, .contact .inner .bottomNav .contactBtn a img {height: 35%;}
+.contact .inner .bottomNav .topBtn a span, .contact .inner .bottomNav .contactBtn a span {color: var(--white); font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200;}
+
+/* contact animation */
+.contact .inner .bottomNav .topBtn:hover a img {animation: topArrow 1.5s infinite;}
+@keyframes topArrow {
+    0% {transform: translateY(0%);}
+    48% {transform: translateY(-300%);}
+    49% {transform: translateY(-300%); opacity: 0;}
+    50% {transform: translateY(0%); opacity: 0;}
+    51% {transform: translateY(300%); opacity: 0;}
+    52% {transform: translateY(300%); opacity: 1;}
+    100% {transform: translateY(0%);}
+}

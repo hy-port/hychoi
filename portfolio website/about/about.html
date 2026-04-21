@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Web Publisher</title>
+
+   <!-- style -->
+   <link rel="stylesheet" href="css/01.reset.css">
+   <link rel="stylesheet" href="css/02.common.css">
+   <link rel="stylesheet" href="css/03.loading.css">
+   <link rel="stylesheet" href="css/04.about.css">
+   <link rel="stylesheet" href="css/05.responsive.css">
+
+   <!-- script jquery -->
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/splitting.min.js"></script>
+   <script src="js/simpleParallax.js"></script>
+   <script src="js/window.curDot.min.js"></script>
+
+   <!-- script cdn -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   <!-- favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+</head>
+
+<body>
+   <!-- loading -->
+   <div class="loading">
+      <div class="spinner-box">
+         <div class="circle-border">
+            <div class="circle-core"></div>
+         </div>
+      </div>
+      <div class="loadBox">
+         <span>about</span>
+      </div>
+   </div>
+
+   <!-- gnb -->
+   <section class="gnb">
+      <img class="close clickable" src="img/icon/close.png" alt="메뉴 닫기">
+      <ul>
+         <li><a href="../../index.html" class="clickable" data-splitting>index</a></li>
+         <li><a href="about.html" class="clickable" data-splitting>about</a></li>
+         <li><a href="../work/work.html" class="clickable" data-splitting>work</a></li>
+         <li><a href="../process/process.html" class="clickable" data-splitting>process</a></li>
+         <li id="gnb-background"></li>
+      </ul>
+   </section>
+
+   <!-- wrap -->
+   <div class="wrap">
+
+      <!-- header -->
+      <header>
+         <h1 class="logo clickable"><a href="../../index.html"><img src="img/logo/logo(white).png" class="whiteLogo"
+                  alt="흰색 로고"><img src="img/logo/logo(black).png" class="blackLogo" alt="검은색 로고"></a></h1>
+         <nav class="menuOpen clickable">
+            <ul class="menu">
+               <li data-splitting>Menu</li>
+               <li class="menuBtn">
+                  <img src="img/icon/menu.png" alt="메뉴 버튼">
+                  <img src="img/icon/menu(black).png" class="blackMenu" alt="검은색 메뉴 버튼">
+               </li>
+            </ul>
+         </nav>
+      </header>
+
+      <!-- section title -->
+      <section class="title">
+         <div class="inner">
+            <h2 class="headTitle">
+               <p><span class="bold">web publishing</span></p>
+               <p><span>& operation</span></p>
+            </h2>
+            <div class="mainTextEn">
+               <p><span>Built to deliver,</span></p>
+               <p><span>maintained to perform,</span></p>
+               <p><span>ready to grow.</span></p>
+            </div>
+         </div>
+      </section>
+
+      <!-- section about -->
+      <section class="about">
+         <div class="inner">
+            <div class="imgBox">
+               <img class="aboutImgBox" src="img/img/Aurelius.png" alt="사진">
+            </div>
+            <div class="marquee">
+               <ul class="marquee-content marquee-content01">
+                  <li>NIL SINE MAGNO</li>
+                  <li class="bold">VITA LABORE.</li>
+                  <li>NIL SINE MAGNO</li>
+                  <li class="bold">VITA LABORE.</li>
+               </ul>
+               <ul class="marquee-content marquee-content02">
+                  <li>dedit</li>
+                  <li class="bold">mortalibus.</li>
+                  <li>dedit</li>
+                  <li class="bold">mortalibus.</li>
+                  <li>dedit</li>
+                  <li class="bold">mortalibus.</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+
+      <!-- section basic -->
+      <section class="basic">
+         <div class="inner">
+            <ul class="left">
+               <li>
+                  <span class="mask">
+                     <span class="infoTitle1">
+                        <span>Web publisher</span><br><br>
+                        Name<br>
+                        Address<br>
+                        Contact<br>
+                        Education<br><br>
+                        Interests
+                     </span>
+                  </span>
+               </li>
+               <li>
+                  <span class="mask">
+                     <span class="infoTitle2">
+                        <span class="infoText1">He'story</span><br><br>
+                        <span class="infoText2">
+                           최현우<br>
+                           Republic of Korea<br>
+                           gusdn1555@nate.com<br>
+                           상명대학교 졸업<br>
+                           역사콘텐츠 / 문화콘텐츠 전공<br>
+                           Web Trend / Contents / History
+                        </span>
+                     </span>
+                  </span>
+               </li>
+            </ul>
+            <ul class="right">
+               <li class="text">
+                  <span class="mask">
+                     <span>
+                        디자인 시안을 받아 퍼블하는 것에서 멈추지 않았습니다.<br>
+                        모바일 시안이 없으면 기준을 만들었고,<br>
+                        우선순위를 판단했으며,<br>
+                        208개사의 유지보수를 처리하며<br>
+                        웹사이트가 살아 움직이도록 유지하는 일을 해왔습니다.<br>
+                        구축과 운영, 두 가지를 모두 경험한 실무자입니다.
+                     </span>
+                  </span>
+               </li>
+               <li class="program">
+                  <div class="numBox">
+                     <span id="number1">0</span> <span>+</span>
+                  </div>
+                  <span>
+                     Projects Built
+                  </span>
+               </li>
+               <li class="training">
+                  <ul class="time">
+                     <li class="hour">
+                        <div class="numBox">
+                           <span id="number2">0</span> <span>+<span>
+                        </div>
+                        <span>
+                           Sites Maintained
+                        </span>
+                     </li>
+                     <li class="works">
+                        <div class="numBox">
+                           <span id="number3">0</span>
+                        </div>
+                        <span>
+                           Years of Experience
+                        </span>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- section history -->
+      <section class="history">
+         <ul class="inner">
+            <li>
+               <div class="date">When 2016</div>
+               <span class="mask">
+                  <span>in the <b class="bold">university</b></span>
+               </span>
+               <div class="comment">Contemplating what I want to do</div>
+               <div class="img">
+                  <img src="img/img(gallery)/graduation.png" alt="사진">
+               </div>
+            </li>
+            <li>
+               <div class="date">When 2023</div>
+               <span class="mask">
+                  <span>Ezen <b class="bold">Academy</b></span>
+               </span>
+               <div class="comment">Learning the necessaryskills</div>
+               <div class="img">
+                  <img src="img/img(gallery)/presentation.png" alt="사진">
+               </div>
+            </li>
+            <li>
+               <div class="date">When 2024</div>
+               <span class="mask">
+                  <span>with the <b class="bold">company</b></span>
+               </span>
+               <div class="comment">Development and growth</div>
+               <div class="img">
+                  <img src="img/img(gallery)/ocean.png" alt="사진">
+               </div>
+            </li>
+            <li>
+               <div class="date">When 2025</div>
+               <span class="mask"><span>team <b class="bold">leader</b></span></span>
+               <div class="comment">Leading and delivering results</div>
+               <div class="img"><img src="img/img(gallery)/cherry blossom.png" alt="사진"></div>
+            </li>
+            <li>
+               <div class="date">When 2026</div>
+               <span class="mask"><span>new <b class="bold">challenge</b></span></span>
+               <div class="comment">Ready for the next step</div>
+               <div class="img"><img src="img/img(gallery)/aurelius.png" alt="사진"></div>
+            </li>
+         </ul>
+      </section>
+
+      <!-- section skill -->
+      <section class="skill">
+         <div class="inner">
+            <div class="left">
+               <h2 class="mask"><span class="skillText">my<br><b class="bold">skills</b></span></h2>
+            </div>
+            <ul class="right">
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName">HTML / HTML5</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     웹 표준에 맞는 시맨틱 마크업 구조 설계<br>
+                     40건+ 프로젝트 단독 퍼블 수행
+                  </p>
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName">CSS / CSS3 / SCSS</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     SCSS 변수·믹스인 활용 스타일 구조화<br>
+                     모바일 시안 미제공 환경 반응형 독립 설계
+                  </p>
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName">Javascript / jQuery</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     인터랙션 로직 설계 및 라이브러리 활용 구현<br>
+                     jQuery 기반 DOM 조작 및 이벤트 처리
+                  </p>
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName">GSAP</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     ScrollTrigger 기반 스크롤 인터랙션 구현<br>
+                     Lenis 스무스 스크롤 연동
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName font2">Responsive Web</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     미디어 쿼리 기반 PC·태블릿·모바일 대응<br>
+                     시안 없는 환경 독립 기준 수립·적용
+                  </p>
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName font2">Web Accessibility</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     시맨틱 태그 기반 마크업 구조 작성<br>
+                     기본 접근성 마크업 준수
+                  </p>
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName">API</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     카카오지도 API — 위치 정보 구현<br>
+                     Chart.js — 투자정보 데이터 시각화
+                  </p>
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName">Figma</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     디자인 시안 검토 및 퍼블 수치 추출<br>
+                     디자이너 협업 커뮤니케이션 도구로 활용
+                  </p>
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName">GitHub</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     GitHub Desktop 기반 소스 버전 관리<br>
+                     커밋 이력 관리 및 소스 백업 운용
+                  </p>
+               </li>
+               <li class="clickable">
+                  <div class="topBox">
+                     <p class="skillName">CMS</p>
+                     <p class="openTextBtn clickable">
+                        <img src="img/icon/arrow(black).png" alt="검은색 화살표">
+                        <img src="img/icon/arrow(white).png" alt="흰색 화살표">
+                     </p>
+                  </div>
+                  <p class="hiddenText">
+                     관리자 페이지 기반 콘텐츠 운영<br>
+                     208개사 콘텐츠 등록·수정·삭제 처리
+                  </p>
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- resolution -->
+      <section class="resolution">
+         <span class="mask">
+            <span>
+               구축에서 운영까지, 판단하고 실행하는
+            </span>
+         </span>
+         <span class="mask">
+            <span class="bold">
+               콘텐츠 중심의 웹 실무자가 되고자 합니다.
+            </span>
+         </span>
+         <div class="moreBtn2 clickable">
+            <a href="../work/work.html" class="버튼">
+               <span>Click!</span>
+               <span>View All he's work</span>
+            </a>
+         </div>
+      </section>
+
+      <!-- section contact -->
+      <section class="contact">
+         <div class="inner">
+            <div class="textBox">
+               <p class="contactTitle">let's create<br>
+                  <span class="bold">somthing new</span><br>
+                  <span class="bold">together</span>
+               </p>
+               <p>thank you for investing your time.</p>
+            </div>
+            <ul class="bottomNav">
+               <li class="contactBtn clickable">
+                  <a href="#">
+                     <span>Contact</span>
+                     <img src="img/icon/contact.png" alt="컨택트 버튼">
+                  </a>
+               </li>
+               <li class="rights">2026 c.hyun all rights reserved</li>
+               <li class="topBtn clickable">
+                  <a href="#">
+                     <img src="img/icon/topBtn.png" alt="탑 버튼">
+                     <span>Back top</span>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- script -->
+      <script src="js/plugin.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/about.js"></script>
+</body>
+
+</html>

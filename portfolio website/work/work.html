@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Real Works</title>
+
+   <!-- style -->
+   <link rel="stylesheet" href="css/01.reset.css">
+   <link rel="stylesheet" href="css/02.common.css">
+   <link rel="stylesheet" href="css/03.loading.css">
+   <link rel="stylesheet" href="css/04.work.css">
+   <link rel="stylesheet" href="css/05.responsive.css">
+
+   <!-- js plugin-->
+   <script src="js/jquery-3.3.1.min.js"></script>
+   <script src="js/splitting.min.js"></script>
+   <script src="js/simpleParallax.js"></script>
+   <script src="js/window.curDot.min.js"></script>
+
+   <!-- js cdn -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   <!-- favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+</head>
+
+<body>
+
+   <!-- loading -->
+   <div class="loading">
+      <div class="spinner-box">
+         <div class="circle-border">
+            <div class="circle-core"></div>
+         </div>
+      </div>
+      <div class="loadBox">
+         <span>work</span>
+      </div>
+   </div>
+
+   <!-- gnb -->
+   <section class="gnb">
+      <img class="close clickable" src="img/icon/close.png" alt="메뉴 닫기">
+      <ul>
+         <li><a href="../../index.html" class="clickable" data-splitting>index</a></li>
+         <li><a href="../about/about.html" class="clickable" data-splitting>about</a></li>
+         <li><a href="work.html" class="clickable" data-splitting>work</a></li>
+         <li><a href="../process/process.html" class="clickable" data-splitting>process</a></li>
+         <li id="gnb-background"></li>
+      </ul>
+   </section>
+
+   <!-- wrap -->
+   <div class="wrap">
+
+      <!-- header -->
+      <header>
+         <h1 class="logo clickable"><a href="../../index.html"><img src="img/logo/logo(white).png" class="whiteLogo"
+                  alt="흰색 로고"><img src="img/logo/logo(black).png" class="blackLogo" alt="검은색 로고"></a></h1>
+         <nav class="menuOpen clickable">
+            <ul class="menu">
+               <li data-splitting>Menu</li>
+               <li class="menuBtn">
+                  <img src="img/icon/menu.png" alt="메뉴 버튼">
+                  <img src="img/icon/menu(black).png" class="blackMenu" alt="검은색 메뉴 버튼">
+               </li>
+            </ul>
+         </nav>
+      </header>
+
+      <!-- section title -->
+      <section class="title">
+         <div class="inner">
+            <h2 class="headTitle">
+               <p><span class="bold">real</span></p>
+               <p><span>works</span></p>
+            </h2>
+            <div class="mainTextEn">
+               <p><span>Built from briefs,</span></p>
+               <p><span>delivered on deadline,</span></p>
+               <p><span>maintained in production.</span></p>
+            </div>
+         </div>
+      </section>
+
+      <!-- section about -->
+      <section class="about">
+         <div class="inner">
+            <div class="imgBox">
+               <img class="aboutImgBox" src="img/img/about.png" alt="사진">
+            </div>
+            <div class="marquee">
+               <ul class="marquee-content marquee-content01">
+                  <li>NIL SINE MAGNO</li>
+                  <li class="bold">VITA LABORE.</li>
+                  <li>NIL SINE MAGNO</li>
+                  <li class="bold">VITA LABORE.</li>
+               </ul>
+               <ul class="marquee-content marquee-content02">
+                  <li>dedit</li>
+                  <li class="bold">mortalibus.</li>
+                  <li>dedit</li>
+                  <li class="bold">mortalibus.</li>
+                  <li>dedit</li>
+                  <li class="bold">mortalibus.</li>
+               </ul>
+            </div>
+         </div>
+      </section>
+
+      <!-- section gallery -->
+      <section class="gallery">
+         <div class="inner">
+            <div class="changeText">
+               <p>Interaction</p>
+               <p>Responsive</p>
+               <p>Maintained</p>
+               <p>Delivered</p>
+               <p>Structured</p>
+               <p>Operated</p>
+            </div>
+            <div class="fixedText">
+               <p>UI</p>
+               <p>web</p>
+               <p>208+</p>
+               <p>on time</p>
+               <p>markup</p>
+               <p>content</p>
+            </div>
+            <ul class="box-wrapper2">
+               <li class="box box1 clickable" style="--a:0">
+                  <a href="https://group.etevers.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img1.jpg" class="innerBox" alt="에티버스 그룹"></div>
+                  </a>
+               </li>
+               <li class="box box2 clickable" style="--a:1">
+                  <a href="https://www.beetopia.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img2.jpg" class="innerBox" alt="비토피아"></div>
+                  </a>
+               </li>
+               <li class="box box3 clickable" style="--a:2">
+                  <a href="https://haatz.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img3.jpg" class="innerBox" alt="하츠"></div>
+                  </a>
+               </li>
+               <li class="box box4 clickable" style="--a:3">
+                  <a href="https://www.kyungshinholdings.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img4.jpg" class="innerBox" alt="경신홀딩스"></div>
+                  </a>
+               </li>
+               <li class="box box5 clickable" style="--a:4">
+                  <a href="https://kchipsrnd.org/gate/gate.html" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img5.jpg" class="innerBox" alt="반도체 R&D 협력센터"></div>
+                  </a>
+               </li>
+               <li class="box box6 clickable" style="--a:5">
+                  <a href="https://www.d-deli.co.kr" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img6.jpg" class="innerBox" alt="디델리"></div>
+                  </a>
+               </li>
+               <li class="box box7 clickable" style="--a:6">
+                  <a href="https://inceptionlab.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img7.jpg" class="innerBox" alt="인셉션랩"></div>
+                  </a>
+               </li>
+               <li class="box box8 clickable" style="--a:7">
+                  <a href="https://me.hanyang.ac.kr" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img8.jpg" class="innerBox" alt="한양대 기계공학부"></div>
+                  </a>
+               </li>
+               <li class="box box9 clickable" style="--a:8">
+                  <a href="https://worldrotrans.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img9.jpg" class="innerBox" alt="세계로 번역"></div>
+                  </a>
+               </li>
+               <li class="box box10 clickable" style="--a:9">
+                  <a href="http://www.chemon.co.kr" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img10.jpg" class="innerBox" alt="켐온"></div>
+                  </a>
+               </li>
+               <li class="box box11 clickable" style="--a:10">
+                  <a href="https://www.hwajaeng.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img11.jpg" class="innerBox" alt="법무법인 화쟁"></div>
+                  </a>
+               </li>
+               <li class="box box12 clickable" style="--a:11">
+                  <a href="https://www.kdisc.biz" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img12.jpg" class="innerBox" alt="네오아이즈"></div>
+                  </a>
+               </li>
+               <li class="box box13 clickable" style="--a:12">
+                  <a href="https://www.risekorea.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img13.jpg" class="innerBox" alt="라이즈에듀케이션코리아"></div>
+                  </a>
+               </li>
+               <li class="box box14 clickable" style="--a:13">
+                  <a href="https://www.kornicglory.co.kr" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img14.jpg" class="innerBox" alt="코닉글로리"></div>
+                  </a>
+               </li>
+               <li class="box box15 clickable" style="--a:14">
+                  <a href="https://www.directevent.co.kr" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img15.jpg" class="innerBox" alt="다이렉트엔터테인먼트"></div>
+                  </a>
+               </li>
+               <li class="box box16 clickable" style="--a:15">
+                  <a href="https://planit.etevers.com" target="_blank">
+                     <div class="maskBox"><img src="img/img_gallery/img16.jpg" class="innerBox" alt="에티버스 플래닛"></div>
+                  </a>
+               </li>
+            </ul>
+            <div class="progressbar">
+               <span class="mask">
+                  <span>|||||||||||||||</span>
+               </span>
+            </div>
+         </div>
+      </section>
+
+      <!-- section project -->
+      <section class="project01">
+         <div class="inner">
+            <div class="left">
+               <div class="img">
+                  <img class="teamImg" src="img/img/project01.jpg" alt="에티버스 그룹">
+               </div>
+               <p class="target">ETEVERS Group</p>
+               <p class="targetGoal">Main Renewal · 지디웹 우수작</p>
+            </div>
+            <div class="right">
+               <p class="num">01</p>
+               <p class="projectTitle">seamless <b class="bold">scroll</b></p>
+               <span class="projectText mask">
+                  <span>
+                     기존 서브 페이지가 운영 중인 사이트에서 메인만 단독으로 리뉴얼했습니다.<br>
+                     기존 디자인 시스템과의 연속성을 유지하면서도 차별화된 메인을 구현하는 것이 핵심이었습니다.<br><br>
+                     로딩 후 메인 비주얼 텍스트에 색이 차오르는 연출을 시작으로,<br>
+                     스크롤을 내릴수록 다음 섹션으로 자연스럽게 전환되는<br>
+                     끊김 없는 인터랙션 흐름을 GSAP ScrollTrigger로 구현했습니다.<br>
+                     섹션 간 부드러운 전환과 텍스트 변화로 스크롤을 유도했습니다.
+                  </span>
+               </span>
+            </div>
+         </div>
+      </section>
+
+      <!-- section project02 -->
+      <section class="project02">
+         <div class="inner">
+            <div class="left">
+               <p class="num">02</p>
+               <p class="projectTitle">calm <b class="bold">presence</b></p>
+               <span class="projectText mask">
+                  <span>
+                     그룹 지주사 홈페이지인 만큼 과한 애니메이션은 지양하되<br>
+                     스크롤이 지루하지 않도록 가벼운 페이드 모션을 일관되게 적용했습니다.<br><br>
+                     5개 메뉴·20페이지 규모를 리뉴얼하며<br>
+                     모바일 시안 없이 반응형 레이아웃을 독립 설계·납품했습니다.<br>
+                     기업의 신뢰감을 해치지 않으면서 현대적인 웹 경험을 구현하는 방향으로<br>
+                     전체 페이지의 구조와 모션 기준을 통일했습니다.
+                  </span>
+               </span>
+            </div>
+            <div class="right">
+               <div class="img">
+                  <img class="teamImg" src="img/img/project02.jpg" alt="에디슨모터스 개인 프로젝트 사진">
+               </div>
+               <p class="target">Kyungshin Holdings</p>
+               <p class="targetGoal">Full Renewal · 단독 수행</p>
+            </div>
+         </div>
+      </section>
+
+      <!-- ncs -->
+      <section class="ncs">
+         <div class="inner">
+            <div class="textBox">
+               <span class="ncsTitle mask">
+                  <span>real work<br>
+                     <b class="bold">experience</b>
+                  </span>
+               </span>
+               <p class="ncsText">
+                  2년 4개월 실무에서 직접 판단하고<br>
+                  단독으로 수행한 역량입니다.
+               </p>
+            </div>
+            <ul class="line line01">
+               <li id="listTopLeft" class="">GSAP<br>Interaction</li>
+               <li class="">Responsive<br>Web</li>
+               <li class="">Web<br>Operation</li>
+               <li id="listTopRight" class="">API<br>Integration</li>
+            </ul>
+            <ul class="line line02">
+               <li class="">HTML /<br>HTML5</li>
+               <li class="">CSS / CSS3<br>/ SCSS</li>
+               <li class="">Javascript<br>/ jQuery</li>
+               <li class="">Figma</li>
+            </ul>
+            <ul class="line line03">
+               <li id="listBottomLeft" class="">웹<br>접근성</li>
+               <li class="">GitHub<br>Desktop</li>
+               <li class="">CMS<br>운영</li>
+               <li id="listBottomRight" class="">반응형<br>독립설계</li>
+            </ul>
+         </div>
+      </section>
+
+      <!-- resolution -->
+      <section class="resolution">
+         <span class="mask">
+            <span>
+               시안이 없을 경우 기준을 정립하고, 
+            </span>
+         </span>
+         <span class="mask">
+            <span class="bold">
+               긴급 요청에도 우선순위를 고려해 유연하게 대응합니다.
+            </span>
+         </span>
+      </section>
+
+      <!-- contact -->
+      <section class="contact">
+         <div class="inner">
+            <div class="textBox">
+               <p class="contactTitle">Let's create<br>
+                  <span class="bold">such great work</span><br>
+                  <span class="bold">together</span>
+               </p>
+               <p>thank you for investing your time.</p>
+            </div>
+            <ul class="bottomNav">
+               <li class="contactBtn clickable">
+                  <a href="#">
+                     <span>Contact</span>
+                     <img src="img/icon/contact.png" alt="컨택트 버튼">
+                  </a>
+               </li>
+               <li class="rights">2026 c.hyun all rights reserved</li>
+               <li class="topBtn clickable">
+                  <a href="#">
+                     <img src="img/icon/topBtn.png" alt="탑 버튼">
+                     <span>Back top</span>
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </section>
+   </div>
+
+
+   <!-- script -->
+   <script src="js/work.js"></script>
+   <script src="js/plugin.js"></script>
+   <script src="js/common.js"></script>
+</body>
+
+</html>

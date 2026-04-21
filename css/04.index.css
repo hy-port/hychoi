@@ -1,0 +1,260 @@
+/* header */
+header {width: 100vw; height: 14vh; position: fixed; top: 0; left: 0; background: transparent; display: flex; justify-content: space-between; align-items: center; padding: 0 80px; box-sizing: border-box; overflow: hidden; z-index: 10;}
+
+/* header logo */
+header .logo {width: 100px; height: 40px; transition: transform 0.4s;}
+header .logo a {display: block; width: 100%; display: flex; align-self: center; position: relative;}
+header .logo a img {width: 100%; position: absolute;}
+header .logo a .blackLogo {opacity: 0;}
+header .logo a .whiteLogo {opacity: 1;}
+
+/* header menuOpen */
+header .menuOpen {width: 100px; color: var(--white); cursor: pointer; transition: transform 0.4s;}
+header .menuOpen .menu {display: flex; align-items: center; justify-content: space-between;}
+header .menuOpen .menu li {font-family: var(--en2); font-size: var(--mainSubText);}
+header .menuOpen .menu li.menuBtn {position: relative;}
+header .menuOpen .menu li.menuBtn .blackMenu {opacity: 0;}
+header .menuOpen .menu li.menuBtn img {height: 15px; position: absolute; right: 0; top: 50%; transform: translateY(-50%); transition: transform 0.4s;}
+header .menuOpen .menu li.words {margin-top: 12px;}
+header .menuOpen .menu li .char {display: inline-block; position: relative; color: transparent; overflow: hidden;}
+header .menuOpen.blackColor .menu li .char:before, header .menuOpen.blackColor .menu li .char:after {color: var(--black);}
+header .menuOpen .menu li .char:before, header .menuOpen .menu li .char:after {content: attr(data-char); position: absolute; top: 0; left: 0; color: var(--white); transition: transform 0.4s; transition-delay: calc(30ms * var(--char-index));}
+header .menuOpen .menu li .char:before {transform: translateY(100%);}
+
+/* header toggle */
+header.active .logo, header.active .menuOpen {transform: translateY(-14vh);}
+header .menuOpen.blackColor .menu li.menuBtn .blackMenu {opacity: 1;}
+
+/* header animation */
+header .menuOpen:hover .menu li .char:before {transform: translateY(0%);}
+header .menuOpen:hover .menu li .char:after {transform: translateY(-100%);}
+header .menuOpen:hover .menu li.menuBtn img {transform: rotate(90deg) translateX(-5px); transform-origin: center center;}
+
+
+
+/* .gnb */
+.gnb {position: fixed; z-index: 20; top: 0; left: 100%; width: 100%; height: 100vh; background: var(--black); display: flex; justify-content: center; align-items: center; transition: 1s;}
+
+/* gnb close */
+.gnb .close {height: 30px; position: absolute; top: 6%; right: 5%; transition: all 0.4s; cursor: pointer; opacity: 0.5;}
+
+/* gnb content */
+.gnb ul {margin-top: 100px; box-sizing: border-box;}
+.gnb ul li a {display: block; color: var(--white); font-family: var(--en1); font-weight: 200; font-size: var(--headTitle); text-transform: uppercase; text-align: center; transition: opacity 0.3s;}
+.gnb ul li a .char {display: inline-block; position: relative; color: transparent; overflow: hidden; line-height: 1;}
+.gnb ul li a .char:before {font-weight: 100;}
+.gnb ul li a .char:before, .gnb ul li a .char:after {content: attr(data-char); position: absolute; top: 0; left: 0; color: var(--white); transition: transform 0.4s; transition-delay: calc(30ms * var(--char-index));}
+#gnb-background {width: 100%; height: 100%; background-image: linear-gradient(to bottom right, rgba(255,255,255,0.1) 3%, transparent 3%), linear-gradient(to top left, rgba(255,255,255,0.1) 3%, transparent 3%),linear-gradient(to top right, rgba(255,255,255,0.1) 3%, transparent 3%), linear-gradient(to bottom left, rgba(255,255,255,0.1) 3%, transparent 3%); background-position: 0% 0%; background-size: 4vw 4vw; position: absolute; top: 0; left: 0; z-index: -1; transition: opacity 0.8s ease, background-size 0.8s ease, background-position 0.8s ease; pointer-events: none;}
+
+/* gnb toggle */
+.gnb.on {width: 100%; height: 100vh; left: 0; transition: 1s;}
+.gnb ul.active li a {opacity: 0.2;}
+.gnb ul.active li:hover a {opacity: 1;}
+
+/* .gnb animation */
+.gnb .close:hover {transform: scale(1.2); opacity: 1;}
+.gnb ul li a .char:before {transform: translateY(100%);}
+.gnb ul li a:hover .char:before {transform: translateY(0%);}
+.gnb ul li a:hover .char:after {transform: translateY(-100%);}
+
+
+
+/* title */
+.title {width: 100%; height: 60vh; text-align: center; padding-top: 18vh; box-sizing: border-box;}
+.title .inner {width: 100%; height: 100%; position: relative;}
+.title .inner p {overflow: hidden;}
+.title span {display: inline-block;}
+
+/* title mainText */
+.title .inner h2 {font-family: var(--en1); color: var(--white); font-size: var(--headTitle); text-transform: uppercase; line-height: 1.1;}
+.title .inner h2 span.bold {font-weight: 100;}
+.title .inner .mainTextEn {text-align: left; transform: translateX(50%); margin-top: 15px;}
+.title .inner .mainTextEn p span {font-family: var(--en2); font-size: var(--mainTextEn); color: var(--white); font-weight: 200;}
+
+/* title animation */
+.title .inner.motion p > span {transform: translateY(100%);}
+
+
+
+/* about */
+.about {width: 100%; height: 100vh;}
+.about .inner {width: 100%; height: 100%; position: relative; display: flex; justify-content: center; align-items: center;}
+.about .inner:after {content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: linear-gradient(to top, rgba(12, 12, 12, 1) 10%, rgba(12, 12, 12, 0) 30%);}
+
+/* about imgBox */
+.about .inner .imgBox {width: 100%; height: 100%; overflow: hidden;}
+.about .inner .imgBox img {width: 100vw; height: 100vh; object-fit: cover;}
+
+/* about textBox */
+.about .inner .textBox {position: absolute; bottom: 10%; width: 100%; z-index: 2;}
+.about .inner .textBox .mask {display: block; width: 90%; margin: 0 auto; text-align: center; font-family: var(--en1); font-weight: 200; font-size: var(--mainTitleEn); text-transform: uppercase;}
+.about .inner .textBox .mask .text {-webkit-text-fill-color: rgba(255,255,255,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+
+
+
+
+/* about02 */
+.about02 {width: 100%; height: 30vh;}
+.about02 .inner {width: 80%; height: 100%; margin: 50px auto 0;}
+.about02 .inner ul {display: flex; justify-content: space-between;}
+
+/* about02 text */
+.about02 .inner ul .date .mask, .about02 .inner ul .siteTitle .mask {display: inline-block;}
+.about02 .inner ul .date .mask span, .about02 .inner ul .siteTitle .mask span {font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 100; -webkit-text-fill-color: rgba(255,255,255,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+.about02 .inner ul .motto .mask {display: block;}
+.about02 .inner ul .motto .mask .title {font-family: var(--ko); font-weight: 300; font-size: var(--mainTextKo); line-height: 2; -webkit-text-fill-color: rgba(255,255,255,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+.about02 .inner ul .motto .mask .subtitle {font-family: var(--ko); font-weight: 300; font-size: var(--mainSubText); line-height: 1.8; -webkit-text-fill-color: rgba(109,109,109,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#6D6D6D, #6D6D6D);}
+
+/* about02 btn */
+.about02 .inner ul .motto .moreBtn {margin-top: 50px; color: var(--white); cursor: pointer; display: inline-block;}
+.about02 .inner ul .motto .moreBtn a {font-family: var(--en2); font-weight: 200; font-size: var(--mainTextEn); position: relative; display: inline-block;}
+.about02 .inner ul .motto .moreBtn a .btnCircle {display: inline-block; width: 10px; height: 10px; background: var(--white); border-radius: 50%; position: absolute; top: 0; right: -20%; transition: all 0.2s; opacity: 0.5;}
+
+/* about02 animation */
+.about02 .inner ul .motto .moreBtn:hover a .btnCircle {transform: scale(2); transform-origin: center; opacity: 1;}
+
+
+
+/* gallery*/
+.gallery {width: 100%; height: 100vh;}
+.gallery .inner {width: 100%; height: 100%; position: relative; display: flex; justify-content: center; align-items: center;}
+
+/* gallery box-wrapper*/
+.gallery .inner .box-wrapper {width: 100%; height: 50%; position: relative; overflow: hidden;}
+.gallery .inner .box-wrapper .box {width: 20%; height: 100%; position: absolute; top: 0; left: calc(20.5% * var(--a));}
+.gallery .inner .box-wrapper .box .maskBox {width: 90%; height: 100%; overflow: hidden;}
+.gallery .inner .box-wrapper .box img {width: 250%; height: 100%; transform: translateX(0%); object-fit: cover;}
+
+/* gallery btn*/
+.gallery .moreAbout {position: absolute; bottom: 10%; left: 5%;}
+.gallery .moreAbout a {display: inline-block; position: relative; font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 200; color: var(--white);}
+.gallery .moreAbout a .btnCircle {display: inline-block; width: 10px; height: 10px; background: var(--white); border-radius: 50%; position: absolute; top: 0; right: -20%; transition: all 0.2s; opacity: 0.5;}
+
+/* gallery progressbar*/
+.gallery .progressbar {position: absolute; bottom: 10%; right: 5%;}
+.gallery .progressbar .mask {display: inline-block;}
+.gallery .progressbar .mask span {font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 300; color: var(--white); -webkit-text-fill-color: rgba(255,255,255,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+
+/* gallery animation */
+.gallery .moreAbout:hover a .btnCircle {transform: scale(2); transform-origin: center; opacity: 1;}
+
+
+
+/* resolution */
+.resolution {width: 100%; height: 50vh; margin-bottom: 150px; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; flex-direction: column;}
+
+/* resolution text*/
+.resolution .mask {display: block;}
+.resolution .mask span {font-family: var(--ko); font-weight: 50; font-size: var(--mainTitleKo); line-height: 1.6; -webkit-text-fill-color: rgba(255,255,255,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+.resolution .mask span.bold {font-weight: 400;}
+
+/* resolution btn */
+.resolution .moreBtn2 {width: 200px; height: 60px; position: absolute; bottom: 5%; border: 3px solid var(--white); border-radius: 30px; transition: all .2s;}
+.resolution .moreBtn2 a {display: block; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative; perspective: 250px;}
+.resolution .moreBtn2 a span {font-family: var(--en2); font-weight: 200; font-size: var(--mainSubText); color: var(--white); display: block; position: absolute; text-align: center; transition: all .2s;}
+.resolution .moreBtn2 a span:nth-child(1) {transform: rotateX(-90deg); transform-origin: 50% 50% -30px;}
+.resolution .moreBtn2 a span:nth-child(2) {transform: rotateX(0deg); transform-origin: 50% 50% -30px;}
+
+/* resolution animation */
+.resolution .moreBtn2:hover {transform: scale(1.1);}
+.resolution .moreBtn2:hover a span:nth-child(1) {transform: rotateX(0deg);}
+.resolution .moreBtn2:hover a span:nth-child(2) {color: transparent; transform: rotateX(90deg);}
+
+
+
+/* work */
+.work {width: 100%; height: 100vh;}
+.work .inner {width: 100%; height: 100%; background: var(--white); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;}
+
+/* work name */
+.work .inner .sectionName {position: absolute; top: 8%; font-family: var(--en2); font-weight: 300; font-size: var(--mainSubText);}
+.work .inner .sectionName .mask {display: block;}
+.work .inner .sectionName .mask span {-webkit-text-fill-color: rgba(255,255,255,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#000, #000);}
+
+/* work cylinder */
+.work .inner .cylinder {width: 100%; height: 100vh; position: relative;}
+.work .inner .cylinder:before {content: ''; width: 100%; height: 60%; position: absolute; top: 50%; left: 0; transform: translateY(-50%); background: linear-gradient(to top, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 30%); z-index: 3;}
+.work .inner .cylinder:after {content: ''; width: 100%; height: 60%; position: absolute; top: 50%; left: 0; transform: translateY(-50%); background: linear-gradient(to bottom, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 30%);}
+.work .inner .cylinder .container {width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.work .inner .cylinder .container .container-box {transform-style: preserve-3d; position: relative; transform: perspective(2500px);}
+.work .inner .cylinder .container .container-box span {font-family: var(--en1); font-size: var(--mainTitleEn); position: absolute; color: var(--black); font-weight: 200; white-space: nowrap; text-transform: uppercase; transform-style: preserve-3d; transform: translate(-50%, -50%) rotateX(calc(var(--b)*-22.5deg)) translateZ(250px); backface-visibility: hidden;}
+.work .inner .cylinder .container .container-box span i {font-weight: 100;}
+.work .inner .cylinder .container .container-box .blank {color: transparent;}
+
+/* work text */
+.work .inner .textBox {width: 80%; height: 100%; margin: 0 auto; display: flex; justify-content: space-between; position: absolute; z-index: 5; background: #fff;}
+.work .inner .textBox .date .mask, .work .inner .textBox .siteTitle .mask {display: inline-block;}
+.work .inner .textBox .date .mask span, .work .inner .textBox .siteTitle .mask span {font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 200; -webkit-text-fill-color: rgba(0,0,0,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#000, #000);}
+.work .inner .textBox .goal .mask {display: block}
+.work .inner .textBox .goal .mask .goalText {font-family: var(--ko); font-weight: 400; font-size: var(--mainTextKo); line-height: 1.6; -webkit-text-fill-color: rgba(0,0,0,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#000, #000);}
+.work .inner .textBox .goal .mask .goalTitle {font-family: var(--en2); font-weight: 100; font-size: var(--mainSubText); line-height: 1.6; text-transform: uppercase; -webkit-text-fill-color: rgba(109,109,109,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#6D6D6D, #6D6D6D);}
+
+
+
+/* ncs */
+.ncs {width: 100%; height: 200vh;}
+.ncs .inner {width: 100%; height: 100%; background: var(--black); position: relative;}
+
+/* ncs marquee */
+.ncs .inner .marquee {font-family: var(--en1); font-size: var(--mainTitleEn); font-weight: 100; color: var(--white); height: 10%; position: relative; top: 5%; display: flex; align-items: center; overflow: hidden; gap: 20px}
+.ncs .inner .marquee .marquee-content {flex-shrink: 0; display: flex; justify-content: space-around; gap: 20px; animation: scroll 25s linear infinite;}
+.ncs .inner .marquee .marquee-content .bold {font-weight: 200;}
+
+/* ncs content */
+.ncs .inner .ncsList-container {width: 100%; position: absolute; top: 15%;}
+.ncs .inner .ncsList-container .ncsList {width: 100%; padding: 140px 10%; box-sizing: border-box; border-bottom: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.2); display: flex; justify-content: space-between; transition: all 0.4s; pointer-events: none;}
+.ncs .inner .ncsList-container .ncsList:last-child {border: none;}
+.ncs .inner .ncsList-container .ncsList .ncsName {width: fit-content; font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 100; text-transform: uppercase;}
+.ncs .inner .ncsList-container .ncsList .ncsTitle {width: 18%; font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 100; text-transform: uppercase;}
+.ncs .inner .ncsList-container .ncsList .info {width: 35%;}
+.ncs .inner .ncsList-container .ncsList .info .infoTitle {font-family: var(--en1); font-size: var(--mainSubTitleEn); font-weight: 100; text-transform: uppercase; margin-bottom: 15px;}
+.ncs .inner .ncsList-container .ncsList .info .infoTitle .bold {font-weight: 200;}
+.ncs .inner .ncsList-container .ncsList .info .hiddenText {font-family: var(--ko); font-size: var(--mainSubText); font-weight: 100; line-height: 2; color: rgba(255,255,255,0.2); height: 0; overflow: hidden; transition: all 0.4s;}
+.ncs .inner .ncsList-container .ncsList .info .moreBtn {margin-top: 15px; color: rgba(255,255,255,0.2); cursor: pointer; display: inline-block; transition: all 0.4s;}
+.ncs .inner .ncsList-container .ncsList .info .moreBtn a {font-family: var(--en2); font-weight: 200; font-size: var(--mainTextEn); position: relative; display: inline-block;}
+.ncs .inner .ncsList-container .ncsList .info .moreBtn a .btnCircle {display: inline-block; width: 10px; height: 10px; background: var(--white); border-radius: 50%; position: absolute; top: 0; right: -20%; transition: all 0.2s; opacity: 0.2;}
+
+/* ncs toggle */
+.ncs .inner .ncsList-container .ncsList.active {color: rgba(255,255,255,1); pointer-events: auto;}
+.ncs .inner .ncsList-container .ncsList.active .info .hiddenText {height: 96px; color: rgba(255,255,255,1);}
+.ncs .inner .ncsList-container .ncsList.active .info .moreBtn {color: rgba(255,255,255,1);}
+
+/* ncs animation */
+@keyframes scroll {
+    from {transform: translateX(0);
+    }
+    to {transform: translateX(calc(-100% - 20px));
+    }
+}
+.ncs .inner .ncsList-container .ncsList .info .moreBtn:hover a .btnCircle {transform: scale(2); transform-origin: center; opacity: 1;}
+
+
+
+/* contract */
+.contact {width: 100%; height: 100vh;}
+.contact .inner {width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative;}
+
+/* contract text */
+.contact .inner .textBox .contactTitle {text-align: center; font-family: var(--en1); font-size: var(--headTitle); text-transform: uppercase; color: var(--white); font-weight: 100; line-height: 1.1;}
+.contact .inner .textBox .contactTitle .bold {font-weight: 200;}
+.contact .inner .textBox p:last-child {text-align: center; color: var(--white); text-transform: uppercase; font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 100; margin-top: 50px;}
+
+/* contract  nav */
+.contact .inner .bottomNav {width: 100%; height: 5vh; position: absolute; bottom: 2%; display: flex; justify-content: space-between;}
+.contact .inner .bottomNav .rights {width: 20%; color: var(--white); display: flex; align-items: center; justify-content: center; text-transform: uppercase; font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200;}
+.contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 10%; text-align: center;}
+.contact .inner .bottomNav .topBtn a, .contact .inner .bottomNav .contactBtn a {width: 100%; height: 100%; padding: 0 20%; display: block; display: flex; align-items: center; justify-content: space-between; overflow: hidden;}
+.contact .inner .bottomNav .topBtn a img, .contact .inner .bottomNav .contactBtn a img {height: 35%;}
+.contact .inner .bottomNav .topBtn a span, .contact .inner .bottomNav .contactBtn a span {color: var(--white); font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200;}
+
+/* contact animation */
+.contact .inner .bottomNav .topBtn:hover a img {animation: topArrow 1.5s infinite;}
+@keyframes topArrow {
+    0% {transform: translateY(0%);}
+    48% {transform: translateY(-300%);}
+    49% {transform: translateY(-300%); opacity: 0;}
+    50% {transform: translateY(0%); opacity: 0;}
+    51% {transform: translateY(300%); opacity: 0;}
+    52% {transform: translateY(300%); opacity: 1;}
+    100% {transform: translateY(0%);}
+}

@@ -1,0 +1,41 @@
+:root {
+   /* color */
+   --black: #0C0C0C;
+   --white: #fff;
+   --gray: #6D6D6D;
+   
+  /* font */
+   --en1: Mona-Sans;
+   --en2: Poppins;
+   --ko: Pretendard;
+   
+   /* font size */
+   --headTitle: 5.990vw;
+   --mainTitleEn: 3.854vw;
+   --mainTitleKo: 3.333vw;
+   --mainSubTitleEn: 1.875vw;
+   --mainSubTitleKo: 1.667vw;
+   --mainTextEn: 1.042vw;
+   --mainTextKo: 0.938vw;
+   --mainSubText: 0.833vw;
+}
+
+/* Font */
+@font-face {font-family: 'Mona-Sans'; src: url('../font/Mona/Mona-Sans-ExtraBoldWide.otf'); font-weight: 200;}
+@font-face {font-family: 'Mona-Sans'; src: url('../font/Mona/Mona-Sans-LightWide.otf'); font-weight: 100;}
+@font-face {font-family: 'Poppins'; src: url('../font/Poppins/Poppins-SemiBold.ttf'); font-weight: 300;}
+@font-face {font-family: 'Poppins'; src: url('../font/Poppins/Poppins-Medium.ttf'); font-weight: 200;}
+@font-face {font-family: 'Poppins'; src: url('../font/Poppins/Poppins-Regular.ttf'); font-weight: 100;}
+@font-face {font-family: 'Pretendard'; src: url('../font/Pretendard/Pretendard-ExtraBold.otf'); font-weight: 500;}
+@font-face {font-family: 'Pretendard'; src: url('../font/Pretendard/Pretendard-SemiBold.otf'); font-weight: 400;}
+@font-face {font-family: 'Pretendard'; src: url('../font/Pretendard/Pretendard-Bold.otf'); font-weight: 300;}
+@font-face {font-family: 'Pretendard'; src: url('../font/Pretendard/Pretendard-Regular.otf'); font-weight: 200;}
+@font-face {font-family: 'Pretendard'; src: url('../font/Pretendard/Pretendard-Light.otf'); font-weight: 100;}
+
+/* scrollbar hidden */
+body::-webkit-scrollbar {display: none;}
+body {-ms-overflow-style: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+
+/* main */
+body {background: var(--bgBlack);}
+.wrap {width: 100%; overflow: hidden;}

@@ -1,0 +1,231 @@
+/* header */
+header {width: 100vw; height: 14vh; position: fixed; top: 0; left: 0; background: transparent; display: flex; justify-content: space-between; align-items: center; padding: 0 80px; box-sizing: border-box; overflow: hidden; z-index: 10;}
+
+/* header logo */
+header .logo {width: 100px; height: 40px; transition: transform 0.4s;}
+header .logo a {display: block; width: 100%; display: flex; align-self: center; position: relative;}
+header .logo a img {width: 100%; position: absolute;}
+header .logo a .blackLogo {opacity: 0;}
+header .logo a .whiteLogo {opacity: 1;}
+
+/* header menuOpen */
+header .menuOpen {width: 100px; color: var(--white); cursor: pointer; transition: transform 0.4s;}
+header .menuOpen .menu {display: flex; align-items: center; justify-content: space-between;}
+header .menuOpen .menu li {font-family: var(--en2); font-size: var(--mainSubText);}
+header .menuOpen .menu li.menuBtn {position: relative;}
+header .menuOpen .menu li.menuBtn .blackMenu {opacity: 0;}
+header .menuOpen .menu li.menuBtn img {height: 15px; position: absolute; right: 0; top: 50%; transform: translateY(-50%); transition: transform 0.4s;}
+header .menuOpen .menu li.words {margin-top: 12px;}
+header .menuOpen .menu li .char {display: inline-block; position: relative; color: transparent; overflow: hidden;}
+header .menuOpen.blackColor .menu li .char:before, header .menuOpen.blackColor .menu li .char:after {color: var(--black);}
+header .menuOpen .menu li .char:before, header .menuOpen .menu li .char:after {content: attr(data-char); position: absolute; top: 0; left: 0; color: var(--white); transition: transform 0.4s; transition-delay: calc(30ms * var(--char-index));}
+header .menuOpen .menu li .char:before {transform: translateY(100%);}
+
+/* header toggle */
+header.active .logo, header.active .menuOpen {transform: translateY(-14vh);}
+header .menuOpen.blackColor .menu li.menuBtn .blackMenu {opacity: 1;}
+
+/* header animation */
+header .menuOpen:hover .menu li .char:before {transform: translateY(0%);}
+header .menuOpen:hover .menu li .char:after {transform: translateY(-100%);}
+header .menuOpen:hover .menu li.menuBtn img {transform: rotate(90deg) translateX(-5px); transform-origin: center center;}
+
+
+
+/* .gnb */
+.gnb {position: fixed; z-index: 20; top: 0; left: 100%; width: 100%; height: 100vh; background: var(--black); display: flex; justify-content: center; align-items: center; transition: 1s;}
+
+/* gnb close */
+.gnb .close {height: 30px; position: absolute; top: 6%; right: 5%; transition: all 0.4s; cursor: pointer; opacity: 0.5;}
+
+/* gnb content */
+.gnb ul {margin-top: 100px; box-sizing: border-box;}
+.gnb ul li a {display: block; color: var(--white); font-family: var(--en1); font-weight: 200; font-size: var(--headTitle); text-transform: uppercase; text-align: center; transition: opacity 0.3s;}
+.gnb ul li a .char {display: inline-block; position: relative; color: transparent; overflow: hidden; line-height: 1;}
+.gnb ul li a .char:before {font-weight: 100;}
+.gnb ul li a .char:before, .gnb ul li a .char:after {content: attr(data-char); position: absolute; top: 0; left: 0; color: var(--white); transition: transform 0.4s; transition-delay: calc(30ms * var(--char-index));}
+#gnb-background {width: 100%; height: 100%; background-image: linear-gradient(to bottom right, rgba(255,255,255,0.1) 3%, transparent 3%), linear-gradient(to top left, rgba(255,255,255,0.1) 3%, transparent 3%),linear-gradient(to top right, rgba(255,255,255,0.1) 3%, transparent 3%), linear-gradient(to bottom left, rgba(255,255,255,0.1) 3%, transparent 3%); background-position: 0% 0%; background-size: 4vw 4vw; position: absolute; top: 0; left: 0; z-index: -1; transition: opacity 0.8s ease, background-size 0.8s ease, background-position 0.8s ease; pointer-events: none;}
+
+/* gnb toggle */
+.gnb.on {width: 100%; height: 100vh; left: 0; transition: 1s;}
+.gnb ul.active li a {opacity: 0.2;}
+.gnb ul.active li:hover a {opacity: 1;}
+
+/* .gnb animation */
+.gnb .close:hover {transform: scale(1.2); opacity: 1;}
+.gnb ul li a .char:before {transform: translateY(100%);}
+.gnb ul li a:hover .char:before {transform: translateY(0%);}
+.gnb ul li a:hover .char:after {transform: translateY(-100%);}
+
+
+
+/* title */
+.title {width: 100%; height: 60vh; text-align: center; padding-top: 18vh; box-sizing: border-box;}
+.title .inner {width: 100%; height: 100%; position: relative;}
+.title .inner p {overflow: hidden;}
+.title span {display: inline-block;}
+
+/* title mainText */
+.title .inner h2 {font-family: var(--en1); color: var(--white); font-size: var(--headTitle); text-transform: uppercase; line-height: 1.1;}
+.title .inner h2 span.bold {font-weight: 100;}
+.title .inner .mainTextEn {text-align: left; transform: translateX(50%); margin-top: 15px;}
+.title .inner .mainTextEn p span {font-family: var(--en2); font-size: var(--mainTextEn); color: var(--white); font-weight: 200;}
+
+/* title animation */
+.title .inner.motion p > span {transform: translateY(100%);}
+
+
+
+/* about */
+.about {width: 100%; height: 100vh;}
+.about .inner {width: 100%; height: 100%; position: relative; display: flex; justify-content: center; align-items: center;}
+.about .inner:after {content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: linear-gradient(to top, rgba(12, 12, 12, 1) 5%, rgba(12, 12, 12, 0) 30%);}
+
+/* about imgBox */
+.about .inner .imgBox {width: 100%; height: 100%; overflow: hidden;}
+.about .inner .imgBox img {width: 100vw; height: 100vh; object-fit: cover;}
+
+/* about marquee */
+.about .inner .marquee {position: absolute; bottom: 5%; width: 100%; z-index: 2; overflow: hidden;}
+.about .inner .marquee .marquee-content {font-family: var(--en1); font-weight: 100; font-size: var(--mainTitleEn); color: var(--white); text-transform: uppercase; display: flex; align-items: center; white-space: nowrap; gap: 15px;}
+.about .inner .marquee .marquee-content01{margin-bottom: 20px; transform: translateX(calc(-35% - 15px));}
+.about .inner .marquee .marquee-content02 {transform: translateX(calc(10% - 15px));}
+.about .inner .marquee .marquee-content .bold {font-weight: 200;}
+
+
+
+
+/* basic */
+.basic {width: 100%; height: 100vh;}
+.basic .inner {width: 100%; height: 100%; position: relative; padding: 150px 300px 0 300px; box-sizing: border-box; display: flex; justify-content: space-between;}
+
+/* basic left */
+.basic .inner .left {width: 45%; display: flex; justify-content: space-between;}
+.basic .inner .left li {width: 50%; text-align: left;}
+.basic .inner .left li .mask {display: inline-block; font-family: var(--en2); font-size: var(--mainSubText); font-weight: 100; line-height: 2;}
+.basic .inner .left li .mask .infoTitle1 {-webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+.basic .inner .left li .mask .infoTitle2 .infoText1{-webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+.basic .inner .left li .mask .infoTitle2 .infoText2{-webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#6d6d6d, #6d6d6d);}
+
+/* basic right */
+.basic .inner .right {width: 50%;}
+.basic .inner .right .text {font-family: var(--ko); font-size: var(--mainSubText); font-weight: 100; line-height: 1.8;  margin-bottom: 65px;}
+.basic .inner .right .text .mask {display: inline-block;}
+.basic .inner .right .text .mask span {-webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+.basic .inner .right .program {width: 100%; margin-bottom: 65px;}
+.basic .inner .right .program .numBox {width: 100%; padding: 30px 0px; margin-bottom: 45px; color: var(--white); font-family: var(--en1); font-size: var(--mainTitleEn); font-weight: 200; border-bottom: 1px solid #6d6d6d;}
+.basic .inner .right .program > span {display: inline-block; font-family: var(--en2); font-size: var(--mainSubText); font-weight: 100; color: var(--gray);}
+.basic .inner .right .training {width: 100%;}
+.basic .inner .right .training .time {width: 100%; display: flex; justify-content: space-between;}
+.basic .inner .right .training .time li {width: 45%;}
+.basic .inner .right .training .time li .numBox {color: var(--white); font-family: var(--en1); font-size: var(--mainSubTitleEn); font-weight: 200; border-bottom: 1px solid #6d6d6d; padding: 30px 0px; margin-bottom: 40px;}
+.basic .inner .right .training .time li > span {display: inline-block; font-family: var(--en2); font-size: var(--mainSubText); font-weight: 100; color: var(--gray)}
+
+
+
+/* history */
+.history {width: 100%; height: 100vh;}
+.history .inner {width: 100%; height: 100%; display: flex; flex-direction: column; color: var(--white);}
+
+/* history list */
+.history .inner li {width: 100%; height: 20%; padding: 0px 50px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; text-align: center; border-bottom: 1px solid var(--gray);}
+.history .inner li:last-child {border: none;}
+.history .inner li .date, .history .inner li .comment {width: 15%; font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200; transition: 0.3s;}
+.history .inner li .mask {display: inline-block; font-family: var(--en1); font-size: var(--mainTitleEn); font-weight: 100; text-transform: uppercase;}
+.history .inner li .mask .bold {font-weight: 200;}
+.history .inner li .mask span {-webkit-text-fill-color: rgba(255,255,255,0.1); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff); background-size: 100%; transition: 0.3s;}
+.history .inner li .img {position: absolute; left: 0; top: 0; width: 300px; height: 400px; transform: translate(-50%, -50%); clip-path: inset(0% 100% 0% 0%); transition: 0.6s; pointer-events: none; z-index: 10;}
+.history .inner li .img img {width: 100%; height: 100%;}
+
+/* history toggle */
+.history.active .inner li .date, .history.active .inner li .comment {opacity: 0.3;}
+.history.active .inner li:hover .date, .history.active .inner li:hover .comment {opacity: 1;}
+.history.active .inner li .mask span {background-size: 0%;}
+.history.active .inner li:hover .mask span {background-size: 100%;}
+.history .inner li:hover .img {clip-path: inset(0% 0% 0% 0%);}
+
+
+
+/* skill */
+.skill {width: 100%; height: 120vh;}
+.skill .inner {width: 100%; height: 100%; background: var(--white); display: flex; justify-content: space-between;}
+
+/* skill left */
+.skill .inner .left {width: 50%; height: 100%; position: relative;}
+.skill .inner .left .mask {display: inline-block; font-family: var(--en1); font-size: var(--mainTitleEn); text-transform: uppercase; font-weight: 100; position: absolute; left: 40%;}
+.skill .inner .left .mask .skillText {-webkit-text-fill-color: rgba(0,0,0,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#000, #000);}
+.skill .inner .left .mask .skillText .bold {font-weight: 200;}
+
+/* skill right */
+.skill .inner .right {width: 50%; height: 100%; display: flex; flex-direction: column; justify-content: center;}
+.skill .inner .right li {width: 60%; padding-top: 15px; box-sizing: border-box; border-top: 1px solid rgba(0,0,0,0.1); cursor: pointer;}
+.skill .inner .right li:last-child {border-bottom: 1px solid rgba(0,0,0,0.1);}
+.skill .inner .right li .topBox {display: flex; justify-content: space-between; padding-bottom: 15px;}
+.skill .inner .right li .topBox .skillName {font-family: var(--en2); font-weight: 200; font-size: var(--mainTextEn); align-self: center; text-transform: uppercase;}
+.skill .inner .right li .topBox .openTextBtn {width: 30px; height: 30px; position: relative; background: #ddd; border-radius: 50%; transition: 0.2s;}
+.skill .inner .right li .topBox .openTextBtn img {width: 35%; height: 35%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); transition: 0.2s; transform-origin: center center;}
+.skill .inner .right li .topBox .openTextBtn img:last-child {opacity: 0;}
+.skill .inner .right li .hiddenText {font-family: var(--ko); font-size: var(--mainSubText); font-weight: 100; color: var(--gray); line-height: 1.8; height: fit-content; overflow: hidden; /* height: 72px; */ height: 0px; transition: 0.4s;}
+
+/* skill animation */
+.skill .inner .right li:hover .topBox .openTextBtn {background: var(--black);}
+.skill .inner .right li:hover .topBox .openTextBtn img:first-child {opacity: 0;}
+.skill .inner .right li:hover .topBox .openTextBtn img:last-child {opacity: 1;}
+
+/* skill toggle */
+.skill .inner .right li.active .hiddenText {height: 72px;}
+.skill .inner .right li.active .openTextBtn {background: var(--black);}
+.skill .inner .right li.active .openTextBtn img {transform: translate(-50%, -50%) rotate(180deg);}
+.skill .inner .right li.active .openTextBtn img:first-child {opacity: 0;}
+.skill .inner .right li.active .openTextBtn img:last-child {opacity: 1;}
+
+
+
+/* resolution */
+.resolution {width: 100%; height: 70vh; margin-bottom: 150px; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; flex-direction: column;}
+
+/* resolution text */
+.resolution .mask {display: block;}
+.resolution .mask span {font-family: var(--ko); font-weight: 50; font-size: var(--mainTitleKo); line-height: 1.6; -webkit-text-fill-color: rgba(255,255,255,0.2); -webkit-background-clip: text; background-repeat: no-repeat; background-image: linear-gradient(#fff, #fff);}
+.resolution .mask span.bold {font-weight: 400;}
+
+/* resolutuon btn */
+.resolution .moreBtn2 {width: 200px; height: 60px; position: absolute; bottom: 15%; border: 3px solid var(--white); border-radius: 30px; transition: all .2s;}
+.resolution .moreBtn2 a {display: block; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative; perspective: 250px;}
+.resolution .moreBtn2 a span {font-family: var(--en2); font-weight: 200; font-size: var(--mainSubText); color: var(--white); display: block; position: absolute; text-align: center; transition: all .2s;}
+.resolution .moreBtn2 a span:nth-child(1) {transform: rotateX(-90deg); transform-origin: 50% 50% -31px;}
+.resolution .moreBtn2 a span:nth-child(2) {transform: rotateX(0deg); transform-origin: 50% 50% -30px;}
+
+/* resolution animation */
+.resolution .moreBtn2:hover {transform: scale(1.1);}
+.resolution .moreBtn2:hover a span:nth-child(1) {transform: rotateX(0deg);}
+.resolution .moreBtn2:hover a span:nth-child(2) {color: transparent; transform: rotateX(90deg);}
+
+
+
+/* contract */
+.contact {width: 100%; height: 100vh;}
+.contact .inner {width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative;}
+
+.contact .inner .textBox .contactTitle {text-align: center; font-family: var(--en1); font-size: var(--headTitle); text-transform: uppercase; color: var(--white); font-weight: 100; line-height: 1.1;}
+.contact .inner .textBox .contactTitle .bold {font-weight: 200;}
+.contact .inner .textBox p:last-child {text-align: center; color: var(--white); text-transform: uppercase; font-family: var(--en2); font-size: var(--mainTextEn); font-weight: 100; margin-top: 50px;}
+
+.contact .inner .bottomNav {width: 100%; height: 5vh; position: absolute; bottom: 2%; display: flex; justify-content: space-between;}
+.contact .inner .bottomNav .rights {width: 20%; color: var(--white); display: flex; align-items: center; justify-content: center; text-transform: uppercase; font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200;}
+.contact .inner .bottomNav .topBtn, .contact .inner .bottomNav .contactBtn {width: 10%; text-align: center;}
+.contact .inner .bottomNav .topBtn a, .contact .inner .bottomNav .contactBtn a {width: 100%; height: 100%; padding: 0 20%; display: block; display: flex; align-items: center; justify-content: space-between; overflow: hidden;}
+.contact .inner .bottomNav .topBtn a img, .contact .inner .bottomNav .contactBtn a img {height: 35%;}
+.contact .inner .bottomNav .topBtn a span, .contact .inner .bottomNav .contactBtn a span {color: var(--white); font-family: var(--en2); font-size: var(--mainSubText); font-weight: 200;}
+
+/* contact animation */
+.contact .inner .bottomNav .topBtn:hover a img {animation: topArrow 1.5s infinite;}
+@keyframes topArrow {
+    0% {transform: translateY(0%);}
+    48% {transform: translateY(-300%);}
+    49% {transform: translateY(-300%); opacity: 0;}
+    50% {transform: translateY(0%); opacity: 0;}
+    51% {transform: translateY(300%); opacity: 0;}
+    52% {transform: translateY(300%); opacity: 1;}
+    100% {transform: translateY(0%);}
+}

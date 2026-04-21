@@ -1,0 +1,7 @@
+#svgAni01 {
+    stroke-dasharray: 6534;
+    stroke-dashoffset: 6534;
+    animation: ani1 1s linear 0.5s forwards;
+}
+
+@keyframes ani1 { 0% {stroke-dashoffset : 6534;} 100% {stroke-dashoffset : 0;} }
