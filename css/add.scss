@@ -400,3 +400,13 @@ header {
     }
   }
 }
+
+.d-block {
+  display: block !important;
+}
+
+.d-md-none {
+  @media screen and (min-width: 769px) {
+    display: none !important;
+  }
+}

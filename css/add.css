@@ -354,4 +354,14 @@
     margin-top: 10px;
   }
 }
+
+.d-block {
+  display: block !important;
+}
+
+@media screen and (min-width: 769px) {
+  .d-md-none {
+    display: none !important;
+  }
+}
 /*# sourceMappingURL=add.css.map */
