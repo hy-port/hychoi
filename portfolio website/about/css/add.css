@@ -1,0 +1,142 @@
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0 20px;
+    height: 80px;
+  }
+  header .logo {
+    width: 80px;
+    height: auto;
+    aspect-ratio: 100 / 40;
+  }
+  header .menuOpen {
+    width: auto;
+  }
+  header .menuOpen .menu li {
+    font-size: 16px;
+  }
+  header .menuOpen .menu .menuBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gnb ul {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    height: 70vh;
+  }
+  .about .inner .imgBox img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .about .inner .marquee .marquee-content01 {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .basic {
+    padding: 50px 20px;
+    height: auto;
+  }
+  .basic .inner {
+    padding: 0;
+  }
+  .basic .inner .numBox {
+    padding: 0 0 10px !important;
+    margin: 0 0 10px !important;
+  }
+  .basic .inner .program {
+    margin-bottom: 30px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .history {
+    height: auto;
+  }
+  .history .inner li {
+    padding: 30px 20px;
+  }
+  .history .inner li img {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skill {
+    height: auto;
+  }
+  .skill .inner {
+    padding: 50px 20px;
+  }
+  .skill .inner .right > .clickable {
+    width: 100% !important;
+  }
+  .skill .inner .right li .topBox .skillName {
+    font-size: 16px;
+  }
+  .skill .inner .right li .hiddenText {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resolution {
+    height: auto;
+    margin: 100px auto;
+    padding: 0 20px;
+  }
+  .resolution .mask span {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .resolution .moreBtn2 {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin-top: 30px;
+    width: 160px;
+    height: auto;
+    aspect-ratio: 200 / 60;
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
+  }
+  .resolution .moreBtn2 span {
+    color: #fff !important;
+    -webkit-transform: rotateX(0deg) !important;
+            transform: rotateX(0deg) !important;
+  }
+  .resolution .moreBtn2 span:nth-child(1) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    height: 50vh;
+  }
+  .contact .inner {
+    padding: 0 20px;
+  }
+  .contact .inner .textBox p:last-child {
+    margin-top: 10px;
+  }
+}
+/*# sourceMappingURL=add.css.map */

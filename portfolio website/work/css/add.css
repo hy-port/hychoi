@@ -1,0 +1,288 @@
+@charset "UTF-8";
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0 20px;
+    height: 80px;
+  }
+  header .logo {
+    width: 80px;
+    height: auto;
+    aspect-ratio: 100 / 40;
+  }
+  header .menuOpen {
+    width: auto;
+  }
+  header .menuOpen .menu li {
+    font-size: 16px;
+  }
+  header .menuOpen .menu .menuBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gnb ul {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    height: 70vh;
+  }
+  .about .inner .imgBox img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .about .inner .marquee .marquee-content01 {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    height: auto;
+    padding: 50px 20px;
+    position: relative;
+  }
+  .gallery::after {
+    content: "ⓘ 가로 스크롤하여 더 많은 프로젝트를 확인하세요";
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: #ddd;
+    font-size: 14px;
+  }
+  .gallery .inner > * {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    -webkit-transform: translate(0, 0) !important;
+            transform: translate(0, 0) !important;
+  }
+  .gallery .inner .changeText {
+    display: none;
+  }
+  .gallery .inner .fixedText {
+    display: none;
+  }
+  .gallery .inner .progressbar {
+    display: none;
+  }
+  .gallery .inner .box-wrapper2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 30px;
+    overflow: auto;
+  }
+  .gallery .inner .box-wrapper2 .box {
+    width: 70%;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    -webkit-transform: translate(0, 0) !important;
+            transform: translate(0, 0) !important;
+  }
+  .gallery .inner .box-wrapper2 .box .maskBox {
+    width: 100% !important;
+    -webkit-filter: none;
+            filter: none;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .project01 {
+    height: auto;
+    padding: 100px 20px 50px;
+  }
+  .project01 .inner {
+    pointer-events: none;
+    padding: 0;
+    margin: 0;
+  }
+  .project01 .inner .left {
+    width: 100%;
+  }
+  .project01 .inner .left > * {
+    font-size: 16px !important;
+  }
+  .project01 .inner .left .img {
+    max-width: 80%;
+    -webkit-filter: none !important;
+            filter: none !important;
+    opacity: 1 !important;
+    margin: 0 auto 10px;
+  }
+  .project01 .inner .right {
+    margin-top: 30px;
+    width: 100%;
+    display: block;
+    padding: 0;
+  }
+  .project01 .inner .right > * {
+    font-size: 14px !important;
+  }
+  .project01 .inner .right > * br {
+    display: none;
+  }
+  .project01 .inner .right .num {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .project02 {
+    height: auto;
+    padding: 50px 20px;
+  }
+  .project02 .inner {
+    pointer-events: none;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .project02 .inner .right {
+    width: 100%;
+  }
+  .project02 .inner .right > * {
+    font-size: 16px !important;
+  }
+  .project02 .inner .right .img {
+    max-width: 80%;
+    -webkit-filter: none !important;
+            filter: none !important;
+    opacity: 1 !important;
+    margin: 0 auto 10px;
+  }
+  .project02 .inner .left {
+    margin-top: 30px;
+    width: 100%;
+    display: block;
+    padding: 0;
+  }
+  .project02 .inner .left > * {
+    font-size: 14px !important;
+  }
+  .project02 .inner .left > * br {
+    display: none;
+  }
+  .project02 .inner .left .num {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ncs {
+    height: auto;
+  }
+  .ncs .inner {
+    padding: 50px 20px;
+    margin: 0;
+  }
+  .ncs .inner .textBox {
+    margin-bottom: 30px;
+  }
+  .ncs .inner .textBox .ncsTitle {
+    font-size: 20px !important;
+    margin-bottom: 10px;
+  }
+  .ncs .inner .textBox .ncsText {
+    font-size: 14px;
+    color: #fff;
+  }
+  .ncs .inner .line {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .ncs .inner .line li {
+    width: 50%;
+    height: 80px;
+    font-size: 14px !important;
+    color: #fff !important;
+    border: 1px solid #ddd;
+  }
+  .ncs .inner .line li:before {
+    display: none;
+  }
+  .ncs .inner .line li::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resolution {
+    height: auto;
+    margin: 100px auto;
+    padding: 0 20px;
+  }
+  .resolution .mask span {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .resolution .moreBtn2 {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin-top: 30px;
+    width: 160px;
+    height: auto;
+    aspect-ratio: 200 / 60;
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
+  }
+  .resolution .moreBtn2 span {
+    color: #fff !important;
+    -webkit-transform: rotateX(0deg) !important;
+            transform: rotateX(0deg) !important;
+  }
+  .resolution .moreBtn2 span:nth-child(1) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    height: 50vh;
+  }
+  .contact .inner {
+    padding: 0 20px;
+  }
+  .contact .inner .textBox p:last-child {
+    margin-top: 10px;
+  }
+}
+/*# sourceMappingURL=add.css.map */

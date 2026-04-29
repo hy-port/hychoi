@@ -1,0 +1,176 @@
+header {
+  @media screen and (max-width: 768px) {
+    padding: 0 20px;
+    height: 80px;
+
+    .logo {
+      width: 80px;
+      height: auto;
+      aspect-ratio: 100 / 40;
+    }
+
+    .menuOpen {
+      width: auto;
+
+      .menu {
+        li {
+          font-size: 16px;
+        }
+
+        .menuBtn {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.gnb {
+  @media screen and (max-width: 768px) {
+    ul {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+
+.about {
+  @media screen and (max-width: 768px) {
+    height: 70vh;
+
+    .inner {
+      .imgBox {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .marquee {
+        .marquee-content01 {
+          margin-bottom: 10px !important;
+        }
+      }
+    }
+  }
+}
+
+.basic {
+  @media screen and (max-width: 768px) {
+    padding: 50px 20px;
+    height: auto;
+
+    .inner {
+      padding: 0;
+
+      .numBox {
+        padding: 0 0 10px !important;
+        margin: 0 0 10px !important;
+      }
+
+      .program {
+        margin-bottom: 30px !important;
+      }
+    }
+  }
+}
+
+.history {
+  @media screen and (max-width: 768px) {
+    height: auto;
+
+    .inner {
+      li {
+        padding: 30px 20px;
+
+        img {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+.skill {
+  @media screen and (max-width: 768px) {
+    height: auto;
+
+    .inner {
+      padding: 50px 20px;
+
+      .right {
+        >.clickable {
+          width: 100% !important;
+        }
+
+        li {
+          .topBox {
+            .skillName {
+              font-size: 16px;
+            }
+          }
+
+          .hiddenText {
+            font-size: 14px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.resolution {
+  @media screen and (max-width: 768px) {
+    height: auto;
+    margin: 100px auto;
+    padding: 0 20px;
+
+    .mask {
+      span {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+    }
+
+    .moreBtn2 {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      margin-top: 30px;
+      width: 160px;
+      height: auto;
+      aspect-ratio: 200 / 60;
+      transform: scale(1) !important;
+
+      span {
+        color: #fff !important;
+        transform: rotateX(0deg) !important;
+
+        &:nth-child(1) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  @media screen and (max-width: 768px) {
+    height: 50vh;
+
+    .inner {
+      padding: 0 20px;
+
+      .textBox {
+        p:last-child {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

@@ -53,521 +53,409 @@ $(function() {
     tl.play();
 });
 
-//about
-$(function() {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const lenis = new Lenis({
-        wheelEventsTarget: document.querySelector('.wrap'),
-    });
+/* --------------------------------------------------
+   공통 초기화 (Lenis + ScrollTrigger + ticker)
+-------------------------------------------------- */
+const setVh = () => {
+  document.documentElement.style.setProperty(
+    "--vh",
+    `${window.innerHeight * 0.01}px`
+  );
+};
+setVh();
+window.addEventListener("resize", setVh);
 
-    lenis.on('scroll', ScrollTrigger.update)
+gsap.registerPlugin(ScrollTrigger);
 
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 600)
-    })
-
-    gsap.ticker.lagSmoothing(0)
-    
-    let mm = gsap.matchMedia(),
-    breakPoint = 1280;
-
-    mm.add({
-        pc: `(min-width: ${breakPoint}px)`,
-        tablet: `(max-width: ${breakPoint - 1}px)`,
-        reduceMotion: "(prefers-reduced-motion: reduce)"
-    }, (context) => {
-        let {pc, tablet, reduceMotion} = context.conditions;
-
-        gsap.fromTo('.about .inner .imgBox', {
-            'clip-path' : pc ? 'inset(10% 35%)' : 'inset(20% 35%)',
-            'filter' : pc ? 'grayscale(0)' : 'grayscale(0)'
-        }, {'clip-path' : pc ? 'inset(0% 0%)' : 'inset(0% 0%)',
-            'filter' : pc ? 'grayscale(0.8)' : 'grayscale(0.8)',
-            scrollTrigger: {
-                trigger: '.about .inner',
-                pinnedContainer: '.about .inner',
-                start: '0% 0%',
-                end: '100% 0%',
-                scrub: 1
-            }
-        })
-
-        gsap.fromTo('.about .inner .marquee', {
-            'transform' : pc ? 'translateY(150%)' : 'translateY(150%)' 
-        }, {
-            'transform' : pc ? 'translateY(0%)' : 'translateY(0%)',
-            scrollTrigger: {
-                trigger: '.about .inner',
-                pinnedContainer: '.about .inner',
-                start: '50% 0%',
-                end: '100% 0%',
-                scrub: 1
-            }
-        })
-
-        gsap.fromTo('.about .inner .marquee .marquee-content01', {
-            'transform' : pc ? 'translateX(calc(-35% - 15px))' : 'translateX(calc(-35% - 15px))'
-        }, {
-            'transform' : pc ? 'translateX(calc(1% - 15px))' : 'translateX(calc(1% - 15px))',
-            scrollTrigger: {
-                trigger: '.about .inner',
-                pinnedContainer: '.about .inner',
-                start: '50% 0%',
-                end: '200% 0%',
-                scrub: 1
-            }
-        })
-
-        gsap.fromTo('.about .inner .marquee .marquee-content02', {
-            'transform' : pc ? 'translateX(calc(10% - 15px))' : 'translateX(calc(10% - 15px))'
-        }, {
-            'transform' : pc ? 'translateX(calc(-28% - 15px))' : 'translateX(calc(-28% - 15px))',
-            scrollTrigger: {
-                trigger: '.about .inner',
-                pinnedContainer: '.about .inner',
-                start: '50% 0%',
-                end: '200% 0%',
-                scrub: 1
-            }
-        })
-
-        gsap.fromTo('.about', {
-        }, {
-            scrollTrigger: {
-                trigger: '.about',
-                start: '0% 0%',
-                end: '100% 0%',
-                pin: true,
-                scrub: 1
-            }
-        })
-
-        return () => {}
-    });
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smoothWheel: true,
+  touchMultiplier: 1.5,
+  infinite: false,
 });
 
-//gallery
-$(function() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const lenis = new Lenis({
-        wheelEventsTarget: document.querySelector('.wrap'),
-    });
-
-    lenis.on('scroll', ScrollTrigger.update)
-
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 600)
-    })
-
-    gsap.ticker.lagSmoothing(0)
-    
-    let mm = gsap.matchMedia(),
-    breakPoint = 1280;
-
-    mm.add({
-        pc: `(min-width: ${breakPoint}px)`,
-        tablet: `(max-width: ${breakPoint - 1}px)`,
-        reduceMotion: "(prefers-reduced-motion: reduce)"
-    }, (context) => {
-        let {pc, tablet, reduceMotion} = context.conditions;
-
-        gsap.fromTo('.box-wrapper2', {
-            'rotateY' : pc ? '0deg' : '0deg'
-        }, {
-            'rotateY' : pc ? '-360deg' : '-360deg',
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.gallery .inner',
-                pinnedContainer: '.gallery .inner',
-                scrub: 1,
-                start: '35% 0%',
-                end: '280% 0%'
-            }
-        })
-
-        gsap.fromTo('.box-wrapper2 .box:nth-child(odd) .maskBox img', {
-            'transform' : pc ? 'translateY(-150%)' : 'translateY(-150%)'
-        }, {
-            'transform' : pc ? 'translateY(0%)' : 'translateY(0%)',
-            scrollTrigger: {
-                trigger: '.gallery .inner',
-                pinnedContainer: '.gallery .inner',
-                start: '0% 0%',
-                end: '25% 0%',
-                scrub: 1
-            }
-        })
-
-        gsap.fromTo('.box-wrapper2 .box:nth-child(even) .maskBox img', {
-            'transform' : pc ? 'translateY(150%)' : 'translateY(150%)'
-        }, {
-            'transform' : pc ? 'translateY(0%)' : 'translateY(0%)',
-            scrollTrigger: {
-                trigger: '.gallery .inner',
-                pinnedContainer: '.gallery .inner',
-                start: '0% 0%',
-                end: '25% 0%',
-                scrub: 1
-            }
-        })
-    
-        gsap.fromTo('.gallery .progressbar .mask span', {
-            'background-size' : pc ? '0% 100%' : '0% 100%'
-        }, {
-            'background-size' : pc ? '100% 100%' : '100% 100%',
-            scrollTrigger: {
-                trigger: '.gallery .inner',
-                pinnedContainer: '.gallery .inner',
-                start: '35% 0%',
-                end: '280% 0%',
-                scrub: 1
-            }
-        })
-
-        gsap.fromTo('.changeText p', {
-            'transform' : pc ? 'translateY(100%)' : 'translateY(100%)'
-        },{
-            keyframes: {
-                "0%": {translateY: '100%'},
-                "5%": {translateY: '0%'},
-                "10%": {translateY: '0%'},
-                "20%": {translateY: '-100%'},
-                "30%": {translateY: '-100%'},
-                "40%": {translateY: '-200%'},
-                "50%": {translateY: '-200%'},
-                "60%": {translateY: '-300%'},
-                "70%": {translateY: '-300%'},
-                "80%": {translateY: '-400%'},
-                "90%": {translateY: '-400%'},
-                "100%": {translateY: '-500%'}
-            },
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.gallery .inner',
-                pinnedContainer: '.gallery .inner',
-                scrub: 1,
-                start: '0% 0%',
-                end: '300% 0%'
-            }
-        })
-
-        gsap.fromTo('.fixedText p', {
-            'transform' : pc ? 'translateY(100%)' : 'translateY(100%)'
-        }, {
-            keyframes: {
-                "0%": {translateY: '100%'},
-                "5%": {translateY: '0%'},
-                "15%": {translateY: '-100%'},
-                "25%": {translateY: '-100%'},
-                "35%": {translateY: '-200%'},
-                "45%": {translateY: '-200%'},
-                "55%": {translateY: '-300%'},
-                "65%": {translateY: '-300%'},
-                "75%": {translateY: '-400%'},
-                "85%": {translateY: '-400%'},
-                "95%": {translateY: '-500%'},
-                "100%": {translateY: '-500%'}
-            },
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.gallery .inner',
-                pinnedContainer: '.gallery .inner',
-                scrub: 1,
-                start: '0% 0%',
-                end: '300% 0%'
-            }
-        })
-
-        gsap.fromTo('.gallery', {
-        }, {
-            scrollTrigger: {
-                trigger: '.gallery',
-                start: '0% 0%',
-                end: '300% 0%',
-                pin: true,
-                scrub: 1
-            }
-        })
-
-        return () => {}
-    });
+gsap.ticker.add((time) => {
+  lenis.raf(time * 600);
 });
+gsap.ticker.lagSmoothing(0);
 
-// open detail
-/* $(function() {
-    function openNewWindow(element) {
-        var dataDirect = element.getAttribute("data-direct");
-        window.open("../detail/" + dataDirect + "/" + dataDirect + ".html", "_blank");
+lenis.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.clearScrollMemory();
+window.history.scrollRestoration = "manual";
+
+const mm = gsap.matchMedia();
+
+/* --------------------------------------------------
+     공통 애니메이션 함수
+  -------------------------------------------------- */
+
+// about 섹션
+function aboutAnimation({ clipStart }) {
+  gsap.fromTo(
+    ".about .inner .imgBox",
+    { clipPath: clipStart, filter: "grayscale(0)" },
+    {
+      clipPath: "inset(0% 0%)",
+      filter: "grayscale(0.8)",
+      scrollTrigger: {
+        trigger: ".about .inner",
+        pinnedContainer: ".about .inner",
+        start: "0% 0%",
+        end: "100% 0%",
+        scrub: 1,
+      },
     }
-    
-    $(".box").click(function() {
-        openNewWindow(this);
-    });
-}); */
+  );
 
-//project01
-$(function() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const lenis = new Lenis({
-        wheelEventsTarget: document.querySelector('.wrap'),
-    });
-
-    lenis.on('scroll', ScrollTrigger.update)
-
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 600)
-    })
-
-    gsap.ticker.lagSmoothing(0)
-    
-    let mm = gsap.matchMedia(),
-    breakPoint = 1280;
-
-    mm.add({
-        pc: `(min-width: ${breakPoint}px)`,
-        tablet: `(max-width: ${breakPoint - 1}px)`,
-        reduceMotion: "(prefers-reduced-motion: reduce)"
-    }, (context) => {
-        let {pc, tablet, reduceMotion } = context.conditions;
-
-        gsap.fromTo('.project01 .inner .right span.projectText span', {
-            'background-size' : pc ? '0% 100%' : '0% 100%'
-        }, {
-            'background-size' : pc ? '100% 100%' : '100% 100%',
-            scrollTrigger: {
-                trigger: '.project01 .inner',
-                start: '-30% 0%',
-                end: '-10% 0%',
-                scrub: 1
-            }
-        })
-
-        return () => {}
-    });
-
-    $('.project01 .inner .left').hover(
-        function() {
-            $('.project01 .inner').addClass('on');
-        },
-        function() {
-            $('.project01 .inner').removeClass('on');
-        }
-    );
-    
-    /* $(".project01 .inner .left").click(function() {
-        window.open("../work/img/img/kakaoWebtoon.pdf", "_blank");
-    }); */
-});
-
-//project02
-$(function() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const lenis = new Lenis({
-        wheelEventsTarget: document.querySelector('.wrap'),
-    });
-
-    lenis.on('scroll', ScrollTrigger.update)
-
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 600)
-    })
-
-    gsap.ticker.lagSmoothing(0)
-    
-    let mm = gsap.matchMedia(),
-    breakPoint = 1280;
-
-    mm.add({
-        pc: `(min-width: ${breakPoint}px)`,
-        tablet: `(max-width: ${breakPoint - 1}px)`,
-        reduceMotion: "(prefers-reduced-motion: reduce)"
-    }, (context) => {
-        let {pc, tablet, reduceMotion } = context.conditions;
-
-        gsap.fromTo('.project02 .inner .left span.projectText span', {
-            'background-size' : pc ? '0% 100%' : '0% 100%'
-        }, {
-            'background-size' : pc ? '100% 100%' : '100% 100%',
-            scrollTrigger: {
-                trigger: '.project02 .inner',
-                start: '-30% 0%',
-                end: '-10% 0%',
-                scrub: 1
-            }
-        })
-
-        return () => {}
-    });
-
-    $('.project02 .inner .right').hover(
-        function() {
-            $('.project02 .inner').addClass('on');
-        },
-        function() {
-            $('.project02 .inner').removeClass('on');
-        }
-    );
-    
-    /* $(".project02 .inner .right").click(function() {
-        window.open("../work/img/img/edisonMotors.pdf", "_blank");
-    }); */
-});
-
-//ncs
-$(function() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const lenis = new Lenis({
-        wheelEventsTarget: document.querySelector('.wrap'),
-    });
-
-    lenis.on('scroll', ScrollTrigger.update)
-
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 600)
-    })
-
-    gsap.ticker.lagSmoothing(0)
-    
-    let mm = gsap.matchMedia(),
-    breakPoint = 1280;
-
-    mm.add({
-        pc: `(min-width: ${breakPoint}px)`,
-        tablet: `(max-width: ${breakPoint - 1}px)`,
-        reduceMotion: "(prefers-reduced-motion: reduce)"
-    }, (context) => {
-        let {pc, tablet, reduceMotion } = context.conditions;
-
-        gsap.fromTo('.ncs .inner .textBox .ncsTitle span', {
-            'background-size' : pc ? '0% 100%' : '0% 100%'
-        }, {
-            'background-size' : pc ? '100% 100%' : '100% 100%',
-            scrollTrigger: {
-                trigger: '.ncs .inner',
-                start: '-50% 0%',
-                end: '-15% 0%',
-                scrub: 1
-            }
-        })
-
-        return () => {}
-    });
-    
-    function openNewWindow(element) {
-        var dataDirect = element.getAttribute("data-direct");
-        window.open("../work/img/img/" + dataDirect, "_blank");
+  gsap.fromTo(
+    ".about .inner .marquee",
+    { transform: "translateY(150%)" },
+    {
+      transform: "translateY(0%)",
+      scrollTrigger: {
+        trigger: ".about .inner",
+        pinnedContainer: ".about .inner",
+        start: "50% 0%",
+        end: "100% 0%",
+        scrub: 1,
+      },
     }
-    
-    $(".detailPage").click(function() {
-        openNewWindow(this);
-    });
-    
-    $(".outerPage").click(function() {
-        window.open("http://ezentext01.dothome.co.kr", "_blank");
-    });
+  );
 
-    $(".outerPage2").click(function() {
-        window.open("http://hyportfol01.dothome.co.kr", "_blank");
-    });
+  gsap.fromTo(
+    ".about .inner .marquee .marquee-content01",
+    { transform: "translateX(calc(-35% - 15px))" },
+    {
+      transform: "translateX(calc(1% - 15px))",
+      scrollTrigger: {
+        trigger: ".about .inner",
+        pinnedContainer: ".about .inner",
+        start: "50% 0%",
+        end: "200% 0%",
+        scrub: 1,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".about .inner .marquee .marquee-content02",
+    { transform: "translateX(calc(10% - 15px))" },
+    {
+      transform: "translateX(calc(-28% - 15px))",
+      scrollTrigger: {
+        trigger: ".about .inner",
+        pinnedContainer: ".about .inner",
+        start: "50% 0%",
+        end: "200% 0%",
+        scrub: 1,
+      },
+    }
+  );
+
+  gsap.to(".about", {
+    scrollTrigger: {
+      trigger: ".about",
+      start: "0% 0%",
+      end: "100% 0%",
+      pin: true,
+      scrub: 1,
+    },
+  });
+}
+
+// gallery 섹션
+function galleryAnimation() {
+  gsap.fromTo(
+    ".box-wrapper2",
+    { rotateY: "0deg" },
+    {
+      rotateY: "-360deg",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".gallery .inner",
+        pinnedContainer: ".gallery .inner",
+        scrub: 1,
+        start: "35% 0%",
+        end: "280% 0%",
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".box-wrapper2 .box:nth-child(odd) .maskBox img",
+    { transform: "translateY(-150%)" },
+    {
+      transform: "translateY(0%)",
+      scrollTrigger: {
+        trigger: ".gallery .inner",
+        pinnedContainer: ".gallery .inner",
+        start: "0% 0%",
+        end: "25% 0%",
+        scrub: 1,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".box-wrapper2 .box:nth-child(even) .maskBox img",
+    { transform: "translateY(150%)" },
+    {
+      transform: "translateY(0%)",
+      scrollTrigger: {
+        trigger: ".gallery .inner",
+        pinnedContainer: ".gallery .inner",
+        start: "0% 0%",
+        end: "25% 0%",
+        scrub: 1,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".gallery .progressbar .mask span",
+    { backgroundSize: "0% 100%" },
+    {
+      backgroundSize: "100% 100%",
+      scrollTrigger: {
+        trigger: ".gallery .inner",
+        pinnedContainer: ".gallery .inner",
+        start: "35% 0%",
+        end: "280% 0%",
+        scrub: 1,
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".changeText p",
+    { transform: "translateY(100%)" },
+    {
+      keyframes: {
+        "0%": { translateY: "100%" },
+        "5%": { translateY: "0%" },
+        "10%": { translateY: "0%" },
+        "20%": { translateY: "-100%" },
+        "30%": { translateY: "-100%" },
+        "40%": { translateY: "-200%" },
+        "50%": { translateY: "-200%" },
+        "60%": { translateY: "-300%" },
+        "70%": { translateY: "-300%" },
+        "80%": { translateY: "-400%" },
+        "90%": { translateY: "-400%" },
+        "100%": { translateY: "-500%" },
+      },
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".gallery .inner",
+        pinnedContainer: ".gallery .inner",
+        scrub: 1,
+        start: "0% 0%",
+        end: "300% 0%",
+      },
+    }
+  );
+
+  gsap.fromTo(
+    ".fixedText p",
+    { transform: "translateY(100%)" },
+    {
+      keyframes: {
+        "0%": { translateY: "100%" },
+        "5%": { translateY: "0%" },
+        "15%": { translateY: "-100%" },
+        "25%": { translateY: "-100%" },
+        "35%": { translateY: "-200%" },
+        "45%": { translateY: "-200%" },
+        "55%": { translateY: "-300%" },
+        "65%": { translateY: "-300%" },
+        "75%": { translateY: "-400%" },
+        "85%": { translateY: "-400%" },
+        "95%": { translateY: "-500%" },
+        "100%": { translateY: "-500%" },
+      },
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".gallery .inner",
+        pinnedContainer: ".gallery .inner",
+        scrub: 1,
+        start: "0% 0%",
+        end: "300% 0%",
+      },
+    }
+  );
+
+  gsap.to(".gallery", {
+    scrollTrigger: {
+      trigger: ".gallery",
+      start: "0% 0%",
+      end: "300% 0%",
+      pin: true,
+      scrub: 1,
+    },
+  });
+}
+
+// project 섹션 (공통)
+function projectAnimation({
+  textSelector,
+  triggerSelector,
+  hoverTarget,
+  hoverClass,
+}) {
+  gsap.fromTo(
+    textSelector,
+    { backgroundSize: "0% 100%" },
+    {
+      backgroundSize: "100% 100%",
+      scrollTrigger: {
+        trigger: triggerSelector,
+        start: "-30% 0%",
+        end: "-10% 0%",
+        scrub: 1,
+      },
+    }
+  );
+
+  $(hoverTarget).hover(
+    function () {
+      $(hoverClass).addClass("on");
+    },
+    function () {
+      $(hoverClass).removeClass("on");
+    }
+  );
+}
+
+// ncs 섹션
+function ncsAnimation() {
+  gsap.fromTo(
+    ".ncs .inner .textBox .ncsTitle span",
+    { backgroundSize: "0% 100%" },
+    {
+      backgroundSize: "100% 100%",
+      scrollTrigger: {
+        trigger: ".ncs .inner",
+        start: "-50% 0%",
+        end: "-15% 0%",
+        scrub: 1,
+      },
+    }
+  );
+}
+
+// resolution 섹션
+function resolutionAnimation() {
+  gsap.fromTo(
+    ".resolution .mask span",
+    { backgroundSize: "0% 100%" },
+    {
+      backgroundSize: "100% 100%",
+      scrollTrigger: {
+        trigger: ".resolution",
+        start: "-80% 0%",
+        end: "-30% 0%",
+        scrub: 1,
+      },
+    }
+  );
+}
+
+// contact 섹션
+function contactAnimation() {
+  gsap.fromTo(
+    ".contact",
+    { opacity: 0 },
+    {
+      opacity: 0.7,
+      scrollTrigger: {
+        trigger: ".contact",
+        start: "-50% 0%",
+        end: "0% 0%",
+        scrub: 1,
+      },
+    }
+  );
+}
+
+/* --------------------------------------------------
+     ncs 링크 핸들러 (breakpoint 무관)
+  -------------------------------------------------- */
+function openNewWindow(element) {
+  const dataDirect = element.getAttribute("data-direct");
+  window.open("../work/img/img/" + dataDirect, "_blank");
+}
+
+$(".detailPage").on("click", function () {
+  openNewWindow(this);
+});
+$(".outerPage").on("click", function () {
+  window.open("http://ezentext01.dothome.co.kr", "_blank");
+});
+$(".outerPage2").on("click", function () {
+  window.open("http://hyportfol01.dothome.co.kr", "_blank");
 });
 
-// resolution
-$(function() {
-    gsap.registerPlugin(ScrollTrigger);
+/* --------------------------------------------------
+     breakpoint별 ScrollTrigger 애니메이션
+  -------------------------------------------------- */
+mm.add("(min-width: 1280px)", () => {
+  aboutAnimation({ clipStart: "inset(10% 35%)" });
 
-    const lenis = new Lenis({
-        wheelEventsTarget: document.querySelector('.wrap'),
-    });
+  galleryAnimation();
 
-    lenis.on('scroll', ScrollTrigger.update)
+  projectAnimation({
+    textSelector: ".project01 .inner .right span.projectText span",
+    triggerSelector: ".project01 .inner",
+    hoverTarget: ".project01 .inner .left",
+    hoverClass: ".project01 .inner",
+  });
 
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 600)
-    })
+  projectAnimation({
+    textSelector: ".project02 .inner .left span.projectText span",
+    triggerSelector: ".project02 .inner",
+    hoverTarget: ".project02 .inner .right",
+    hoverClass: ".project02 .inner",
+  });
 
-    gsap.ticker.lagSmoothing(0)
-    
-    let mm = gsap.matchMedia(),
-    breakPoint = 1280;
+  ncsAnimation();
 
-    mm.add({
-        pc: `(min-width: ${breakPoint}px)`,
-        tablet: `(max-width: ${breakPoint - 1}px)`,
-        reduceMotion: "(prefers-reduced-motion: reduce)"
-    }, (context) => {
-        let {pc, tablet, reduceMotion } = context.conditions;
+  resolutionAnimation();
 
-        gsap.fromTo('.resolution .mask span', {
-            'background-size' : pc ? '0% 100%' : '0% 100%'
-        }, {
-            'background-size' : pc ? '100% 100%' : '100% 100%',
-            scrollTrigger: {
-                trigger: '.resolution',
-                start: '-80% 0%',
-                end: '-30% 0%',
-                scrub: 1,
-                onLeave: function() {
-                    $('.skill .inner .right li').removeClass('active');
-                }
-            }
-        })
+  contactAnimation();
 
-        return () => {}
-    });
+  return () => {};
 });
 
-//contact
-$(function() {
-    gsap.registerPlugin(ScrollTrigger);
+mm.add("(min-width: 769px) and (max-width: 1279px)", () => {
+  aboutAnimation({ clipStart: "inset(20% 35%)" });
 
-    const lenis = new Lenis({
-        wheelEventsTarget: document.querySelector('.wrap'),
-    });
+  galleryAnimation();
 
-    lenis.on('scroll', ScrollTrigger.update)
+  projectAnimation({
+    textSelector: ".project01 .inner .right span.projectText span",
+    triggerSelector: ".project01 .inner",
+    hoverTarget: ".project01 .inner .left",
+    hoverClass: ".project01 .inner",
+  });
 
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 600)
-    })
+  projectAnimation({
+    textSelector: ".project02 .inner .left span.projectText span",
+    triggerSelector: ".project02 .inner",
+    hoverTarget: ".project02 .inner .right",
+    hoverClass: ".project02 .inner",
+  });
 
-    gsap.ticker.lagSmoothing(0)
-    
-    let mm = gsap.matchMedia(),
-    breakPoint = 1280;
+  ncsAnimation();
 
-    mm.add({
-        pc: `(min-width: ${breakPoint}px)`,
-        tablet: `(max-width: ${breakPoint - 1}px)`,
-        reduceMotion: "(prefers-reduced-motion: reduce)"
-    }, (context) => {
-        let {pc, tablet, reduceMotion } = context.conditions;
+  resolutionAnimation();
 
-        gsap.fromTo('.contact', {
-            'opacity' : pc ? '0' : '0'
-        }, {
-            'opacity' : pc ? '0.7' : '0.7',
-            scrollTrigger: {
-                trigger: '.contact',
-                start: '-50% 0%',
-                end: '0% 0%',
-                scrub: 1
-            }
-        })
+  contactAnimation();
 
-        return () => {}
-    });
+  return () => {};
 });
 
-// resize
-window.addEventListener('resize', function() {
-    document.body.style.overflow = 'hidden';
-    setTimeout(function() {
-        gsap.matchMediaRefresh();
-        document.body.style.overflow = 'auto';
-    }, 200);
+mm.add("(max-width: 768px)", () => {
+  return () => {};
 });
