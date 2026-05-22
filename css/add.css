@@ -299,6 +299,21 @@
   }
 }
 
+.ncs {
+  height: auto;
+  margin-top: 100px;
+}
+
+.ncs .inner {
+  height: auto;
+}
+
+.ncs .inner .ncsList-container {
+  position: relative;
+  top: auto;
+  height: auto;
+}
+
 @media screen and (max-width: 768px) {
   .ncs {
     height: auto;

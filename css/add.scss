@@ -330,6 +330,19 @@ header {
 }
 
 .ncs {
+  height: auto;
+  margin-top: 100px;
+
+  .inner {
+    height: auto;
+
+    .ncsList-container {
+      position: relative;
+      top: auto;
+      height: auto;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     height: auto;
     margin: 50px auto 0;

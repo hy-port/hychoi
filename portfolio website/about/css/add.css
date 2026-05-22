@@ -48,10 +48,16 @@
   }
 }
 
+.basic {
+  height: auto;
+  margin-bottom: 50px;
+}
+
 @media screen and (max-width: 768px) {
   .basic {
     padding: 50px 20px;
     height: auto;
+    margin-bottom: 0;
   }
   .basic .inner {
     padding: 0;
@@ -93,6 +99,10 @@
   .skill .inner .right li .hiddenText {
     font-size: 14px !important;
   }
+}
+
+.resolution {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {

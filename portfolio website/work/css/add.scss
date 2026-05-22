@@ -59,6 +59,18 @@ header {
 }
 
 .gallery {
+  .inner {
+    .changeText {
+      font-size: 100px;
+      height: 100px;
+    }
+
+    .fixedText {
+      font-size: 70px;
+      height: 70px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     height: auto;
     padding: 50px 20px;
@@ -70,7 +82,7 @@ header {
       left: 20px;
       bottom: 20px;
       color: #ddd;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .inner {
@@ -267,6 +279,8 @@ header {
 }
 
 .resolution {
+  margin-bottom: 0;
+
   @media screen and (max-width: 768px) {
     height: auto;
     margin: 100px auto;

@@ -49,6 +49,16 @@
   }
 }
 
+.gallery .inner .changeText {
+  font-size: 100px;
+  height: 100px;
+}
+
+.gallery .inner .fixedText {
+  font-size: 70px;
+  height: 70px;
+}
+
 @media screen and (max-width: 768px) {
   .gallery {
     height: auto;
@@ -61,7 +71,7 @@
     left: 20px;
     bottom: 20px;
     color: #ddd;
-    font-size: 14px;
+    font-size: 12px;
   }
   .gallery .inner > * {
     position: relative !important;
@@ -239,6 +249,10 @@
   .ncs .inner .line li::after {
     display: none;
   }
+}
+
+.resolution {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {
